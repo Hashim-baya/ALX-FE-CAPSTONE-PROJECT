@@ -5,7 +5,8 @@ import Logo from './Logo'
 
 function Footer() {
   return (
-    <div className='absolute bottom-0 flex items-center p-4 bg-red-200 w-full flex-col justify-center '>
+    <div className='absolute  flex items-center p-4 bg-red-200 w-full flex-col justify-center '>
+       
         <div className='flex items-center justify-center sm:space-x-96  flex-col sm:flex-row'>
            
            <Logo />
@@ -14,6 +15,7 @@ function Footer() {
                 <NavLink to='/homePage' className='text-red-400 text-sm font-extrabold text-center'>HOME</NavLink>
                 <NavLink to='#' className='text-purple-800 font-extrabold text-sm rounded-sm border-4 p-2 bg-blue-200 border-blue-50 hover:bg-slate-100 cursor-pointer ml-4 text-center'>LOGOUT</NavLink>
             </div>
+
         </div>
 
         <p className='font-bold text-gray-400 text-center mt-2 text-sm'>2024 &copy; HASHIM BAYA NASSORO.ALL RIGHTS RESERVED.</p>

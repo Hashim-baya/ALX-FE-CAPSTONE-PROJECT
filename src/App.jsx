@@ -1,14 +1,14 @@
-
-
 import './App.css'
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
+import {ReactQueryDevtools} from '@tanstack/react-query-devtools'
+
+const queryClient = new QueryClient();
 
 function App() {
   
-
   return (
-    <div>
-      <h1 className='text-blue-800 font-extrabold'>APP</h1>
-    </div>
+   <>
+   </>
   )
 }
 
