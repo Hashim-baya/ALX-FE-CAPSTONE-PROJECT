@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchBar from '../common/SearchBar'
 import { useQuery } from '@tanstack/react-query'
+import { NavLink } from 'react-router'
 
 //const apiKey1 = process.env.REACT_APP_API_KEY
 const apiKey = '95fbce6fd7f7a28cfc8577fc88fcac3f'
@@ -67,11 +68,18 @@ function HomePage() {
                         className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
                     >
 
+                    <NavLink to={`/movie/${movie.id}`}>
+
                         <img 
-                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                            alt={movie.title} 
-                            className='w-[200px] h-[250px] rounded-md'
+                                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                alt={movie.title} 
+                                className='w-[200px] h-[250px] rounded-md'
                         />
+
+                    </NavLink>
+
+                       
+
                         <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.title}</h2>
                         <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
@@ -93,11 +101,17 @@ function HomePage() {
                className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
-                <img 
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.title} 
-                    className='w-[200px] h-[250px] rounded-md'
-                />
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.title} 
+                        className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+
+               
                 <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
                 <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
@@ -118,11 +132,17 @@ function HomePage() {
                      key={movie.id}
                      className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'     
                 >
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.name} 
-                        className='w-[200px] h-[250px] rounded-md'
-                    />
+          
+                    <NavLink to={`/movie/${movie.id}`}>
+
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.name} 
+                            className='w-[200px] h-[250px] rounded-md'
+                        />
+
+                    </NavLink>
+                    
                     <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.name}</h2>
                     <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
@@ -141,11 +161,17 @@ function HomePage() {
                     key={movie.id}
                     className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'     
                 >
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.name} 
-                        className='w-[200px] h-[250px] rounded-md'
-                    />
+           
+                    <NavLink to={`/movie/${movie.id}`}>
+                    
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.name} 
+                            className='w-[200px] h-[250px] rounded-md'
+                        />
+
+                    </NavLink>
+                    
                     <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.name}</h2>
                     <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
                 </div>

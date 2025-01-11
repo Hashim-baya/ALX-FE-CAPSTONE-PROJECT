@@ -11,6 +11,7 @@ import Trending from './components/pages/Trending.jsx'
 import TvSeries from './components/pages/TvSeries.jsx'
 import Movies from './components/pages/Movies.jsx'
 import TvShows from './components/pages/TvShows.jsx'
+import MovieDetails from './components/pages/MovieDetails.jsx'
 
 
 const router = createBrowserRouter(
@@ -25,21 +26,27 @@ const router = createBrowserRouter(
           element: <HomePage />
         },
         {
-          path: '/trending',
+          path: 'trending',
           element: <Trending />
         },
         {
-          path: '/tvSeries',
+          path: 'tvSeries',
           element: <TvSeries />
         },
         {
-          path: '/movies',
-          element: <Movies />
+          path: 'movies',
+          element: <Movies />,
+          
         },
         {
-          path: '/tvShows',
+          path: 'tvShows',
           element: <TvShows />
         },
+        {
+          path: 'movie/:id',
+          element: <MovieDetails />
+        }
+
       ]
     }
   ]
