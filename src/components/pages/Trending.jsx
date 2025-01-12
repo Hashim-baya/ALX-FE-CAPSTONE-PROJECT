@@ -59,7 +59,7 @@ function Trending() {
 
         <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll'> 
 
-            {data.results.map((movie) => (
+            {data?.results?.map((movie) => (
 
                 <div 
                     key={movie.id}
@@ -87,7 +87,7 @@ function Trending() {
 
         <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll'>
 
-            {data1.results.map((movie) => (
+            {data1?.results?.map((movie) => (
 
                 <div 
                     key={movie.id}
@@ -116,7 +116,7 @@ function Trending() {
 
         <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll'>
 
-            {data2.results.map((movie) => (
+            {data2?.results?.map((movie) => (
 
                 <div 
                     key={movie.id}
@@ -143,7 +143,8 @@ function Trending() {
 
         <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll'>
 
-            {data3.results.map((movie) => (
+            {data3?.results?.map((movie) => (
+                
                 <div 
                     key={movie.id}
                     className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'

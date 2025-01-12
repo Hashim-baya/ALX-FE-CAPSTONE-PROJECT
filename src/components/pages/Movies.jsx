@@ -22,7 +22,7 @@ function Movies() {
   })
 
 
-  const {isLoading: isLoading2, error: error2, data: data2} = useQuery({
+  const {isLoading: isLoading2a, error: error2, data: data2} = useQuery({
     queryKey: ['movies2'],
     queryFn: () => fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false&include_video=false&language=en-US&page=5&sort_by=popularity.desc`)
     .then(res => res.json())
@@ -40,28 +40,28 @@ function Movies() {
 
   //Action Movies
 
-  const actionMovies = data.results.filter((movie) => movie.genre_ids.includes(28))
-  const actionMovies2 = data1.results.filter((movie) => movie.genre_ids.includes(28))
-  const actionMovies3 = data2.results.filter((movie) => movie.genre_ids.includes(28))
+  const actionMovies = data?.results?.filter((movie) => movie.genre_ids.includes(28))
+  const actionMovies2 = data1?.results?.filter((movie) => movie.genre_ids.includes(28))
+  const actionMovies3 = data2?.results?.filter((movie) => movie.genre_ids.includes(28))
 
 
   //Science Fiction Movies
 
-  const scienceFiction = data.results.filter((movie) => movie.genre_ids.includes(878))
-  const scienceFiction2 = data1.results.filter((movie) => movie.genre_ids.includes(878))
-  const scienceFiction3 = data2.results.filter((movie) => movie.genre_ids.includes(878))
+  const scienceFiction = data?.results?.filter((movie) => movie.genre_ids.includes(878))
+  const scienceFiction2 = data1?.results?.filter((movie) => movie.genre_ids.includes(878))
+  const scienceFiction3 = data2?.results?.filter((movie) => movie.genre_ids.includes(878))
 
   //Animation Movies
 
-  const animationMovies = data.results.filter((movie) => movie.genre_ids.includes(16))
-  const animationMovies2 = data1.results.filter((movie) => movie.genre_ids.includes(16))
-  const animationMovies3 = data2.results.filter((movie) => movie.genre_ids.includes(16))
+  const animationMovies = data?.results?.filter((movie) => movie.genre_ids.includes(16))
+  const animationMovies2 = data1?.results?.filter((movie) => movie.genre_ids.includes(16))
+  const animationMovies3 = data2?.results?.filter((movie) => movie.genre_ids.includes(16))
 
   //Horror Movies
 
-  const horrorMovies = data.results.filter((movie) => movie.genre_ids.includes(27))
-  const horrorMovies2 = data1.results.filter((movie) => movie.genre_ids.includes(27))
-  const horrorMovies3 = data2.results.filter((movie) => movie.genre_ids.includes(27))
+  const horrorMovies = data?.results?.filter((movie) => movie.genre_ids.includes(27))
+  const horrorMovies2 = data1?.results?.filter((movie) => movie.genre_ids.includes(27))
+  const horrorMovies3 = data2?.results?.filter((movie) => movie.genre_ids.includes(27))
   
   return (
     <div className='overflow-auto bg-[#461818]'>
@@ -98,7 +98,7 @@ function Movies() {
         </div>
       ))}
 
-      {actionMovies2.map((movie) => (
+      {actionMovies2?.map((movie) => (
 
         <div 
           key={movie.id}
@@ -123,7 +123,7 @@ function Movies() {
         </div>
       ))}
 
-      {actionMovies3.map((movie) => (
+      {actionMovies3?.map((movie) => (
 
         <div 
           key={movie.id}
@@ -156,7 +156,7 @@ function Movies() {
 
       <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
 
-        {scienceFiction.map((movie) => (
+        {scienceFiction?.map((movie) => (
 
           <div 
             key={movie.id}
@@ -180,7 +180,7 @@ function Movies() {
           </div>
         ))}
 
-        {scienceFiction2.map((movie) => (
+        {scienceFiction2?.map((movie) => (
 
           <div 
             key={movie.id}
@@ -205,7 +205,7 @@ function Movies() {
           </div>
         ))}
 
-        {scienceFiction3.map((movie) => (
+        {scienceFiction3?.map((movie) => (
 
           <div 
             key={movie.id}
@@ -236,7 +236,7 @@ function Movies() {
 
       <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
 
-        {animationMovies.map((movie) => (
+        {animationMovies?.map((movie) => (
 
           <div 
             key={movie.id}
@@ -261,7 +261,7 @@ function Movies() {
 
         ))}
 
-        {animationMovies2.map((movie) => (
+        {animationMovies2?.map((movie) => (
 
           <div 
             key={movie.id}
@@ -285,7 +285,7 @@ function Movies() {
           </div>
         ))}
 
-        {animationMovies3.map((movie) => (
+        {animationMovies3?.map((movie) => (
 
           <div 
             key={movie.id}
@@ -318,7 +318,7 @@ function Movies() {
 
         <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
 
-          {horrorMovies.map((movie) => (
+          {horrorMovies?.map((movie) => (
 
             <div 
               key={movie.id}
@@ -341,7 +341,7 @@ function Movies() {
             </div>
           ))}
 
-          {horrorMovies2.map((movie) => (
+          {horrorMovies2?.map((movie) => (
             
             <div 
               key={movie.id}
@@ -360,7 +360,7 @@ function Movies() {
             </div>
           ))}
 
-          {horrorMovies3.map((movie) => (
+          {horrorMovies3?.map((movie) => (
             
             <div 
               key={movie.id}
