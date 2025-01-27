@@ -16,6 +16,30 @@ function Trending() {
         .then(res => res.json())
     })
 
+    const {isLoading:isLoading4, data:data4, error:error4} = useQuery({
+        queryKey: ['all trending1'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&page=2`)
+        .then(res => res.json())
+    })
+
+    const {isLoading:isLoading5, data:data5, error:error5} = useQuery({
+        queryKey: ['all trending2'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&page=3`)
+        .then(res => res.json())
+    })
+
+    const {isLoading:isLoading6, data:data6, error:error6} = useQuery({
+        queryKey: ['all trending3'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&page=4`)
+        .then(res => res.json())
+    })
+
+    const {isLoading:isLoading7, data:data7, error:error7} = useQuery({
+        queryKey: ['all trending4'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&page=5`)
+        .then(res => res.json())
+    })
+
     //TRENDING MOVIES
 
     const {data:data1, isLoading:isLoading1, error:error1} = useQuery({
@@ -79,6 +103,93 @@ function Trending() {
                     <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.name || movie.title}</h2>
                 
                 </div>
+            ))}
+
+            {data4?.results?.map((movie) => (
+                 <div 
+                    key={movie.id}
+                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+             >
+
+                 <NavLink to={`/movie/${movie.id}`}>
+
+                     <img  
+                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                         alt={movie.name}  
+                         className='w-[200px] h-[250px] rounded-md'
+                     />
+
+                 </NavLink>
+
+                 <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.name || movie.title}</h2>
+             
+             </div>
+            ))}
+
+            {data5?.results?.map((movie) => (
+
+                 <div 
+                    key={movie.id}
+                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+             >
+
+                 <NavLink to={`/movie/${movie.id}`}>
+
+                     <img  
+                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                         alt={movie.name}  
+                         className='w-[200px] h-[250px] rounded-md'
+                     />
+
+                 </NavLink>
+
+                 <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.name || movie.title}</h2>
+             
+             </div>
+            ))}
+
+            {data6?.results?.map((movie) => (
+
+                <div 
+                    key={movie.id}
+                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+                >
+
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img  
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.name}  
+                        className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+
+                <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.name || movie.title}</h2>
+
+                </div>
+            ))}
+
+            {data7?.results?.map((movie) => (
+
+            <div 
+                key={movie.id}
+                className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            >
+
+            <NavLink to={`/movie/${movie.id}`}>
+
+                <img  
+                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                    alt={movie.name}  
+                    className='w-[200px] h-[250px] rounded-md'
+                />
+
+            </NavLink>
+
+            <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.name || movie.title}</h2>
+
+            </div>
             ))}
 
         </div>
