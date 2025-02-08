@@ -16,13 +16,61 @@ function HomePage() {
         queryFn:() => fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`)
         .then(res => res.json())
         .then(data => data)
-},)
+    })
+
+    const {data:data1, isLoading:isLoading1, error:error1} = useQuery({
+        queryKey:['search'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=2`)
+        .then(res => res.json())
+    })
+
+    const {data:data5, isLoading:isLoading5, error:error5} = useQuery({
+        queryKey: ['search1'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=3`)
+        .then(res => res.json())
+    })
+
+    const {data:data6, isLoading:isLoading6, error:error6} = useQuery({
+        queryKey: ['search2'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=4`)
+        .then(res => res.json())
+    })
+
+    const {data:data7, isLoading:isLoading7, error:error7} = useQuery({
+        queryKey: ['search3'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=5`)
+        .then(res => res.json())
+    })
 
     //Get trending movies
 
     const {isLoading:isLoading2, error:error2, data:data2} = useQuery({
         queryKey:['trending'],
         queryFn: () => fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`)
+        .then(res => res.json())
+    })
+
+    const {data:data8, isLoading:isLoading8, error:error8} = useQuery({
+        queryKey:['trending1'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&page=2`)
+        .then(res => res.json())
+    })
+
+    const {data:data9, isLoading:isLoading9, error:error9} = useQuery({
+        queryKey:['trending2'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&page=3`)
+        .then(res => res.json())
+    })
+
+    const {data:data10, isLoading:isLoading10, error:error10} = useQuery({
+        queryKey:['trending3'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&page=4`)
+        .then(res => res.json())
+    })
+
+    const {data:data11, isLoading:isLoading11, error:error11} = useQuery({
+        queryKey:['trending4'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&page=5`)
         .then(res => res.json())
     })
 
@@ -34,11 +82,53 @@ function HomePage() {
         .then(res => res.json())
     })
 
+    const {data:data12, isLoading:isLoading12, error:error12} = useQuery({
+        queryKey:['tv series1'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&page=2`)
+        .then(res => res.json())
+    })
+
+    const {data:data13, isLoading:isLoading13, error:error13} = useQuery({
+        queryKey:['tv series2'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&page=3`)
+        .then(res => res.json())
+    })
+
+    const {data:data14, isLoading:isLoading14, error:error14} = useQuery({
+        queryKey:['tv series3'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&page=4`)
+        .then(res => res.json())
+    })
+
+    const {data:data15, isLoading:isLoading15, error:error15} = useQuery({
+        queryKey:['tv series4'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&page=5`)
+        .then(res => res.json())
+    })
+
     //TV Shows
 
     const {data:data4, isLoading:isLoading4, error:error4} = useQuery({
         queryKey:['tv shows'],
         queryFn: () => fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}`)
+        .then(res => res.json())
+    })
+
+    const {isLoading:isLoading16, error:error16, data:data16} = useQuery({
+        queryKey:['search4'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&page=2`)
+        .then(res => res.json())
+    })
+
+    const {isLoading:isLoading17, error:error17, data:data17} = useQuery({
+        queryKey:['search5'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&page=3`)
+        .then(res => res.json())
+    })
+
+    const {isLoading:isLoading18, error:error18, data:data18} = useQuery({
+        queryKey:['search6'],
+        queryFn: () => fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&page=4`)
         .then(res => res.json())
     })
     
@@ -86,6 +176,110 @@ function HomePage() {
                     </div>
 
                 ))}
+
+                {data8?.results?.map((movie) => (
+
+                <div 
+                    key={movie.id}
+                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+                >
+
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+
+                
+
+                    <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.title}</h2>
+                    <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+                </div>
+
+            ))}
+
+            {data9?.results?.map((movie) => (
+
+            <div 
+                key={movie.id}
+                className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            >
+
+            <NavLink to={`/movie/${movie.id}`}>
+
+                <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.title} 
+                        className='w-[200px] h-[250px] rounded-md'
+                />
+
+            </NavLink>
+
+            
+
+                <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.title}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+
+            ))}
+
+            {data10?.results?.map((movie) => (
+
+            <div 
+                key={movie.id}
+                className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            >
+
+            <NavLink to={`/movie/${movie.id}`}>
+
+                <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.title} 
+                        className='w-[200px] h-[250px] rounded-md'
+                />
+
+            </NavLink>
+
+            
+
+                <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.title}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+
+            ))}
+
+            {data11?.results?.map((movie) => (
+
+            <div 
+                key={movie.id}
+                className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            >
+
+            <NavLink to={`/movie/${movie.id}`}>
+
+                <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.title} 
+                        className='w-[200px] h-[250px] rounded-md'
+                />
+
+            </NavLink>
+
+            
+
+                <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.title}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+
+            ))}
         </div>
        
                 {/* Movies */}
@@ -112,6 +306,102 @@ function HomePage() {
                 </NavLink>
 
                
+                <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+            ))}
+
+            {data1?.results?.map((movie) => (
+
+            <div 
+                key={movie.id}
+            className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            >
+
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.title} 
+                        className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+
+            
+                <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+            ))}
+
+            {data5?.results?.map((movie) => (
+
+            <div 
+                key={movie.id}
+            className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            >
+
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.title} 
+                        className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+
+            
+                <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+            ))}
+
+            {data6?.results?.map((movie) => (
+
+            <div 
+                key={movie.id}
+            className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            >
+
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.title} 
+                        className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+
+            
+                <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+            ))} 
+
+            {data7?.results?.map((movie) => (
+
+            <div 
+                key={movie.id}
+            className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            >
+
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.title} 
+                        className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+
+            
                 <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
                 <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
@@ -149,6 +439,98 @@ function HomePage() {
                 </div>
             ))}
 
+            {data12?.results?.map((movie) => (
+
+            <div
+                key={movie.id}
+                className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'     
+            >
+
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.name} 
+                        className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+                
+                <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.name}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+            ))}
+
+            {data13?.results?.map((movie) => (
+
+            <div
+                key={movie.id}
+                className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'     
+            >
+
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.name} 
+                        className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+                
+                <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.name}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+            ))}
+
+            {data14?.results?.map((movie) => (
+
+            <div
+                key={movie.id}
+                className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'     
+            >
+
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.name} 
+                        className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+                
+                <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.name}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+            ))}
+
+            {data15?.results?.map((movie) => (
+
+            <div
+                key={movie.id}
+                className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'     
+            >
+
+                <NavLink to={`/movie/${movie.id}`}>
+
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.name} 
+                        className='w-[200px] h-[250px] rounded-md'
+                    />
+
+                </NavLink>
+                
+                <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.name}</h2>
+                <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+
+            </div>
+            ))}
+
         </div>
 
         <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4 '>TV SHOWS</h1>
@@ -162,6 +544,72 @@ function HomePage() {
                     className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'     
                 >
            
+                    <NavLink to={`/movie/${movie.id}`}>
+                    
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.name} 
+                            className='w-[200px] h-[250px] rounded-md'
+                        />
+
+                    </NavLink>
+                    
+                    <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.name}</h2>
+                    <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+                </div>
+            ))}
+
+            {data16?.results?.map((movie) => (
+                                
+                <div
+                    key={movie.id}
+                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'     
+                >
+        
+                    <NavLink to={`/movie/${movie.id}`}>
+                    
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.name} 
+                            className='w-[200px] h-[250px] rounded-md'
+                        />
+
+                    </NavLink>
+                    
+                    <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.name}</h2>
+                    <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+                </div>
+            ))}
+
+            {data17?.results?.map((movie) => (
+                                
+                <div
+                    key={movie.id}
+                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'     
+                >
+        
+                    <NavLink to={`/movie/${movie.id}`}>
+                    
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.name} 
+                            className='w-[200px] h-[250px] rounded-md'
+                        />
+
+                    </NavLink>
+                    
+                    <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.name}</h2>
+                    <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+                </div>
+            ))}
+
+            {data18?.results?.map((movie) => (
+                                            
+                <div
+                    key={movie.id}
+                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'     
+                >
+        
                     <NavLink to={`/movie/${movie.id}`}>
                     
                         <img 

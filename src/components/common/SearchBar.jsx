@@ -15,8 +15,11 @@ function SearchBar() {
 
   return (
     <div>
+      
       {/* Search Bar */}
+
       <div className="m-4 flex items-center justify-center">
+
         <input
           type="search"
           id="searchBar"
@@ -26,15 +29,18 @@ function SearchBar() {
           placeholder="Search for a movie"
           className="w-1/2 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-200"
         />
+
         <button
           onClick={handleSearch}
           className="bg-[#461818] p-2 rounded-lg ml-2 flex items-center justify-center"
         >
+
           <img
             src={searchInput}
             alt="search"
             className="w-10 h-10"
           />
+
         </button>
       </div>
 
