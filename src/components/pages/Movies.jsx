@@ -203,15 +203,15 @@ function Movies() {
 
         {/* Action Movies */}
 
-      <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Action</h1>
+      <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Action</h1>
 
-      <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll ' >
+      <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto ' >
 
       {actionMovies.map((movie) => (
 
         <div 
           key={movie.id}
-          className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+          className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
         >
 
           <NavLink to={`/movie/${movie.id}`}>
@@ -219,14 +219,14 @@ function Movies() {
             <img 
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
               alt={movie.title}
-              className='w-[200px] h-[250px] rounded-md'
+              className='sm:w-[200px]  w-[100px] rounded-md'
             />
 
           </NavLink>
           
 
-          <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-          <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+          <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+          <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
         
         </div>
       ))}
@@ -235,7 +235,7 @@ function Movies() {
 
         <div 
           key={movie.id}
-          className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'  
+          className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
         >
 
           <NavLink to={`/movie/${movie.id}`}>
@@ -243,15 +243,15 @@ function Movies() {
             <img 
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
               alt={movie.title}
-              className='w-[200px] h-[250px] rounded-md'
+              className='sm:w-[200px]  w-[100px] rounded-md'
             />
 
           </NavLink>
 
          
 
-            <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-            <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+          <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+          <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
         
         </div>
       ))}
@@ -260,7 +260,7 @@ function Movies() {
 
         <div 
           key={movie.id}
-          className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+          className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
         >
 
           <NavLink to={`/movie/${movie.id}`}>
@@ -268,15 +268,15 @@ function Movies() {
             <img 
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
               alt={movie.title}
-              className='w-[200px] h-[250px] rounded-md'
+              className='sm:w-[200px]  w-[100px] rounded-md'
             />
 
           </NavLink>
 
           
 
-          <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-          <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+          <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+          <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
         
         </div>
       ))}
@@ -285,7 +285,7 @@ function Movies() {
 
       <div 
         key={movie.id}
-        className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+        className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
       >
 
         <NavLink to={`/movie/${movie.id}`}>
@@ -293,15 +293,15 @@ function Movies() {
           <img 
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
             alt={movie.title}
-            className='w-[200px] h-[250px] rounded-md'
+            className='sm:w-[200px]  w-[100px] rounded-md'
           />
 
         </NavLink>
 
         
 
-        <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-        <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+        <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
       </div>
       ))}
@@ -310,7 +310,7 @@ function Movies() {
 
       <div 
         key={movie.id}
-        className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+        className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
       >
 
         <NavLink to={`/movie/${movie.id}`}>
@@ -318,15 +318,15 @@ function Movies() {
           <img 
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
             alt={movie.title}
-            className='w-[200px] h-[250px] rounded-md'
+            className='sm:w-[200px]  w-[100px] rounded-md'
           />
 
         </NavLink>
 
         
 
-        <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-        <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+        <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
       </div>
       ))}
@@ -335,7 +335,7 @@ function Movies() {
 
       <div 
         key={movie.id}
-        className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+        className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
       >
 
         <NavLink to={`/movie/${movie.id}`}>
@@ -343,15 +343,15 @@ function Movies() {
           <img 
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
             alt={movie.title}
-            className='w-[200px] h-[250px] rounded-md'
+            className='sm:w-[200px]  w-[100px] rounded-md'
           />
 
         </NavLink>
 
         
 
-        <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-        <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+        <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
       </div>
       ))}
@@ -360,15 +360,15 @@ function Movies() {
 
         {/* Science Fiction Movies */}
 
-      <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>SCI-FI</h1>
+      <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>SCI-FI</h1>
 
-      <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+      <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
         {scienceFiction?.map((movie) => (
 
           <div 
             key={movie.id}
-            className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'  
+            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer' 
           >
 
             <NavLink to={`/movie/${movie.id}`}>
@@ -376,14 +376,14 @@ function Movies() {
             <img  
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
-              className='w-[200px] h-[250px] rounded-md'
+              className='sm:w-[200px]  w-[100px] rounded-md'
             />
 
             </NavLink>
 
            
-            <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-            <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
           
           </div>
         ))}
@@ -392,7 +392,7 @@ function Movies() {
 
           <div 
             key={movie.id}
-            className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
           >
 
             <NavLink to={`/movie/${movie.id}`}>
@@ -400,15 +400,15 @@ function Movies() {
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
             </NavLink>
 
             
 
-            <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-            <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
           </div>
         ))}
@@ -417,7 +417,7 @@ function Movies() {
 
           <div 
             key={movie.id}
-            className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
           >
 
             <NavLink to={`/movie/${movie.id}`}>
@@ -425,13 +425,13 @@ function Movies() {
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
             </NavLink>
 
-            <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-            <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
          
           </div>
         ))}
@@ -440,7 +440,7 @@ function Movies() {
 
         <div 
           key={movie.id}
-          className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+          className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
         >
 
           <NavLink to={`/movie/${movie.id}`}>
@@ -448,13 +448,13 @@ function Movies() {
             <img 
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
-              className='w-[200px] h-[250px] rounded-md'
+              className='sm:w-[200px]  w-[100px] rounded-md'
             />
 
           </NavLink>
 
-          <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-          <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+          <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+          <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
         </div>
         ))}
@@ -463,7 +463,7 @@ function Movies() {
 
         <div 
           key={movie.id}
-          className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+          className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
         >
 
           <NavLink to={`/movie/${movie.id}`}>
@@ -471,13 +471,13 @@ function Movies() {
             <img 
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
-              className='w-[200px] h-[250px] rounded-md'
+              className='sm:w-[200px]  w-[100px] rounded-md'
             />
 
           </NavLink>
 
-          <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-          <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+          <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+          <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
         </div>
         ))}
@@ -486,7 +486,7 @@ function Movies() {
 
         <div 
           key={movie.id}
-          className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+          className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
         >
 
           <NavLink to={`/movie/${movie.id}`}>
@@ -494,13 +494,13 @@ function Movies() {
             <img 
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
-              className='w-[200px] h-[250px] rounded-md'
+              className='sm:w-[200px]  w-[100px] rounded-md'
             />
 
           </NavLink>
 
-          <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-          <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+          <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+          <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
         </div>
         ))}
@@ -509,15 +509,15 @@ function Movies() {
 
         {/* Animation Movies */}
 
-      <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Animation</h1>
+      <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Animation</h1>
 
-      <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+      <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
         {animationMovies?.map((movie) => (
 
           <div 
             key={movie.id}
-            className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
           >
 
             <NavLink to={`/movie/${movie.id}`}>
@@ -525,14 +525,14 @@ function Movies() {
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
             </NavLink>
 
             
-            <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-            <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
           
           </div>
 
@@ -542,7 +542,7 @@ function Movies() {
 
           <div 
             key={movie.id}
-            className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
           >
 
             <NavLink to={`/movie/${movie.id}`}>
@@ -550,14 +550,14 @@ function Movies() {
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
             </NavLink>
 
         
-            <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-            <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
           
           </div>
         ))}
@@ -566,7 +566,7 @@ function Movies() {
 
           <div 
             key={movie.id}
-            className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
           >
 
             <NavLink to={`/movie/${movie.id}`}>
@@ -574,15 +574,15 @@ function Movies() {
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
             </NavLink>
 
             
 
-            <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-            <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
           </div>
         ))}
@@ -591,7 +591,7 @@ function Movies() {
 
         <div 
           key={movie.id}
-          className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+          className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
         >
 
           <NavLink to={`/movie/${movie.id}`}>
@@ -599,15 +599,15 @@ function Movies() {
             <img 
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
               alt={movie.title} 
-              className='w-[200px] h-[250px] rounded-md'
+              className='sm:w-[200px]  w-[100px] rounded-md'
             />
 
           </NavLink>
 
           
 
-          <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-          <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+          <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+          <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
         </div>
         ))}
@@ -616,7 +616,7 @@ function Movies() {
 
         <div 
           key={movie.id}
-          className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+          className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
         >
 
           <NavLink to={`/movie/${movie.id}`}>
@@ -624,15 +624,15 @@ function Movies() {
             <img 
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
               alt={movie.title} 
-              className='w-[200px] h-[250px] rounded-md'
+              className='sm:w-[200px]  w-[100px] rounded-md'
             />
 
           </NavLink>
 
           
 
-          <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-          <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+          <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+          <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
         </div>
         ))}
@@ -641,7 +641,7 @@ function Movies() {
 
         <div 
           key={movie.id}
-          className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+          className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
         >
 
           <NavLink to={`/movie/${movie.id}`}>
@@ -649,15 +649,15 @@ function Movies() {
             <img 
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
               alt={movie.title} 
-              className='w-[200px] h-[250px] rounded-md'
+              className='sm:w-[200px]  w-[100px] rounded-md'
             />
 
           </NavLink>
 
           
 
-          <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-          <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+          <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+          <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
         </div>
         ))}
@@ -666,15 +666,15 @@ function Movies() {
 
         {/* Horror Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Horror</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Horror</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {horrorMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -682,13 +682,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -697,17 +697,21 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
+
+              <NavLink to={`/movie/${movie.id}`}>
 
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              </NavLink>
+
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -716,7 +720,7 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -724,13 +728,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -739,7 +743,7 @@ function Movies() {
                       
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -747,13 +751,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -762,7 +766,7 @@ function Movies() {
                                   
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -770,13 +774,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -785,7 +789,7 @@ function Movies() {
                                             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -793,13 +797,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
@@ -808,15 +812,15 @@ function Movies() {
 
         {/* Crime Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Crime</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Crime</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {crimeMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -824,13 +828,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -839,17 +843,21 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
+
+              <NavLink to={`/movie/${movie.id}`}>
 
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              </NavLink>
+
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -858,7 +866,7 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -866,13 +874,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -881,7 +889,7 @@ function Movies() {
                       
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -889,13 +897,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -904,7 +912,7 @@ function Movies() {
                                   
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -912,13 +920,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -927,7 +935,7 @@ function Movies() {
                                             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -935,13 +943,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
@@ -950,15 +958,15 @@ function Movies() {
 
       {/* Comedy Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Comedy</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Comedy</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {comedyMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -966,13 +974,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -981,17 +989,21 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
+
+              <NavLink to={`/movie/${movie.id}`}>
 
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              </NavLink>
+
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1000,7 +1012,7 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1008,13 +1020,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1023,7 +1035,7 @@ function Movies() {
                       
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1031,13 +1043,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1046,7 +1058,7 @@ function Movies() {
                                   
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1054,13 +1066,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1069,7 +1081,7 @@ function Movies() {
                                             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1077,13 +1089,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
@@ -1092,15 +1104,15 @@ function Movies() {
 
         {/* Drama Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Drama</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Drama</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {dramaMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1108,13 +1120,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1123,17 +1135,21 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
+
+              <NavLink to={`/movie/${movie.id}`}>
 
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              </NavLink>
+
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1142,7 +1158,7 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1150,13 +1166,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1165,7 +1181,7 @@ function Movies() {
                       
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1173,13 +1189,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1188,7 +1204,7 @@ function Movies() {
                                   
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1196,13 +1212,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1211,7 +1227,7 @@ function Movies() {
                                             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1219,13 +1235,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
@@ -1235,15 +1251,15 @@ function Movies() {
         
         {/* Romance Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Romance</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Romance</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {romanceMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1251,13 +1267,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1266,17 +1282,21 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
+
+              <NavLink to={`/movie/${movie.id}`}>
 
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              </NavLink>
+
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1285,7 +1305,7 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1293,13 +1313,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1308,7 +1328,7 @@ function Movies() {
                       
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1316,13 +1336,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1331,7 +1351,7 @@ function Movies() {
                                   
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1339,13 +1359,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1354,7 +1374,7 @@ function Movies() {
                                             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1362,13 +1382,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
@@ -1378,15 +1398,15 @@ function Movies() {
         
         {/* Thriller Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Thriller</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Thriller</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {thrillerMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1394,13 +1414,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1409,17 +1429,21 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
+
+              <NavLink to={`/movie/${movie.id}`}>
 
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              </NavLink>
+
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1428,7 +1452,7 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1436,13 +1460,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1451,7 +1475,7 @@ function Movies() {
                       
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1459,13 +1483,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1474,7 +1498,7 @@ function Movies() {
                                   
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1482,13 +1506,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1497,7 +1521,7 @@ function Movies() {
                                             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1505,13 +1529,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
@@ -1521,15 +1545,15 @@ function Movies() {
                
         {/* Fantasy Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Fantasy</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Fantasy</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {fantasyMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1537,13 +1561,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1552,17 +1576,21 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
+
+              <NavLink to={`/movie/${movie.id}`}>
 
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              </NavLink>
+
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1571,7 +1599,7 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1579,13 +1607,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1594,7 +1622,7 @@ function Movies() {
                       
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1602,13 +1630,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1617,7 +1645,7 @@ function Movies() {
                                   
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1625,13 +1653,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1640,7 +1668,7 @@ function Movies() {
                                             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1648,13 +1676,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
@@ -1664,15 +1692,15 @@ function Movies() {
                        
         {/* Adventure Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Adventure</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Adventure</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {adventureMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1680,13 +1708,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1695,17 +1723,21 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
+
+              <NavLink to={`/movie/${movie.id}`}>
 
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              </NavLink>
+
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1714,7 +1746,7 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1722,13 +1754,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1737,7 +1769,7 @@ function Movies() {
                       
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1745,13 +1777,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1760,7 +1792,7 @@ function Movies() {
                                   
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1768,13 +1800,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1783,7 +1815,7 @@ function Movies() {
                                             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1791,13 +1823,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
@@ -1807,15 +1839,15 @@ function Movies() {
                                
         {/* Family Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Family</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Family</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {familyMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1823,13 +1855,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1838,17 +1870,21 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
+
+              <NavLink to={`/movie/${movie.id}`}>
 
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              </NavLink>
+
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1857,7 +1893,7 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1865,13 +1901,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1880,7 +1916,7 @@ function Movies() {
                       
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1888,13 +1924,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1903,7 +1939,7 @@ function Movies() {
                                   
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1911,13 +1947,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1926,7 +1962,7 @@ function Movies() {
                                             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1934,13 +1970,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
@@ -1950,15 +1986,15 @@ function Movies() {
                                        
         {/* Mystery Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Mystery</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Mystery</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {mysteryMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -1966,13 +2002,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -1981,17 +2017,21 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
+
+              <NavLink to={`/movie/${movie.id}`}>
 
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 alt={movie.title} 
-                className='w-[200px] h-[250px] rounded-md'
+                className='sm:w-[200px]  w-[100px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              </NavLink>
+
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -2000,7 +2040,7 @@ function Movies() {
             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -2008,13 +2048,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -2023,7 +2063,7 @@ function Movies() {
                       
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -2031,13 +2071,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -2046,7 +2086,7 @@ function Movies() {
                                   
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -2054,13 +2094,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -2069,7 +2109,7 @@ function Movies() {
                                             
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -2077,13 +2117,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
@@ -2093,15 +2133,15 @@ function Movies() {
                                                
         {/* Western Movies */}
 
-        {/* <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Western</h1>
+        {/* <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Western</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {westernMovies?.map((movie) => (
 
             <div 
               key={movie.id}
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <NavLink to={`/movie/${movie.id}`}>
@@ -2109,13 +2149,13 @@ function Movies() {
                 <img 
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                   alt={movie.title} 
-                  className='w-[200px] h-[250px] rounded-md'
+                  className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -2133,8 +2173,8 @@ function Movies() {
                 className='w-[200px] h-[250px] rounded-md'
               />
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -2156,8 +2196,8 @@ function Movies() {
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -2179,8 +2219,8 @@ function Movies() {
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -2202,8 +2242,8 @@ function Movies() {
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
           ))}
@@ -2225,8 +2265,8 @@ function Movies() {
 
               </NavLink>
 
-              <h2 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
             </div>
             ))}
