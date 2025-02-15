@@ -57,15 +57,15 @@ function TvSeries() {
         
             {/* Popular TV Series */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Popular Tv Series</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Popular Tv Series</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
             {data?.results?.map((movie) => (
 
                 <div 
                     key={movie.id}
-                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
                 >
 
                     <NavLink to={`/movie/${movie.id}`}>
@@ -73,13 +73,13 @@ function TvSeries() {
                         <img 
                             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                             alt={movie.name} 
-                            className='w-[200px] h-[250px] rounded-md'
+                            className='sm:w-[200px]  w-[100px] rounded-md'
                         />  
 
                     </NavLink>
 
-                    <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.name}</h2> 
-                    <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>          
+                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2> 
+                    <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>          
                 
                 </div>
             ))}
@@ -88,15 +88,15 @@ function TvSeries() {
 
             {/* Top Rated TV Series */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Top Rated TV Series</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Top Rated TV Series</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
             {data2?.results?.map((movie) => (
 
                 <div 
                     key={movie.id}
-                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
                 >
 
                     <NavLink to={`/movie/${movie.id}`}>
@@ -104,13 +104,13 @@ function TvSeries() {
                         <img  
                             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                             alt={movie.name}
-                            className='w-[200px] h-[250px] rounded-md'
+                            className='sm:w-[200px]  w-[100px] rounded-md'
                         />
 
                     </NavLink>
 
-                    <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.name}</h2>
-                    <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
+                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                    <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
 
                 </div>
             ))}
@@ -119,15 +119,15 @@ function TvSeries() {
 
             {/* Airing Today TV Series */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>Airing Today</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Airing Today</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
             {data3?.results?.map((movie) => (
 
                 <div 
                     key={movie.id}
-                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'    
+                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer' 
                 >
 
                     <NavLink to={`/movie/${movie.id}`}>
@@ -135,13 +135,13 @@ function TvSeries() {
                         <img  
                             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                             alt={movie.name}
-                            className='w-[200px] h-[250px] rounded-md'
+                            className='sm:w-[200px]  w-[100px] rounded-md'
                         />
 
                     </NavLink>
 
-                    <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.name}</h2>
-                    <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
+                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                    <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
                
                 </div>
             ))}
@@ -150,15 +150,15 @@ function TvSeries() {
 
             {/* On The Air TV Series */}
 
-        <h1 className='text-[#F5F5F5] font-bold text-[24px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>On The Air</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>On The Air</h1>
 
-        <div className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
             {data4?.results?.map((movie) => (
 
                 <div 
                     key={movie.id}
-                    className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
                 >
 
                     <NavLink to={`/movie/${movie.id}`}>
@@ -166,13 +166,13 @@ function TvSeries() {
                         <img  
                             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                             alt={movie.name}
-                            className='w-[200px] h-[250px] rounded-md'
+                            className='sm:w-[200px]  w-[100px] rounded-md'
                         />
 
                     </NavLink>
                     
-                    <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.name}</h2>
-                    <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
+                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                    <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
 
                 </div>
             ))}
