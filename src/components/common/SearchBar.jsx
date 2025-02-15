@@ -53,13 +53,13 @@ function SearchBar() {
       {data?.results?.length > 0 && (
 
         
-        <ul className='flex gap-8  items-center ml-16 mr-16 px-4 pb-4 overflow-x-scroll '>
+        <ul className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
           {data.results.map((movie) => (
 
             <li 
               key={movie.id} 
-              className='w-[200px] flex flex-col items-center  flex-shrink-0  hover:scale-110 cursor-pointer'
+              className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
             >
 
               <Link to={`/movie/${movie.id}`}>
@@ -67,15 +67,15 @@ function SearchBar() {
                 <img 
                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                         alt={movie.title} 
-                        className='w-[200px] h-[250px] rounded-md'
+                        className='sm:w-[200px]  w-[100px] rounded-md'
                 />
 
               </Link>
 
 
 
-              <h2 className='text-[#F5F5F5] font-normal text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start'>{movie.title}</h2>
-              <h3 className='text-[#F5F5F5] font-semibold text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+              <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+              <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
 
 
             </li>
