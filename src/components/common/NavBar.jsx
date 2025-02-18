@@ -13,11 +13,11 @@ function NavBar() {
 
 
   return (
-    <div className='w-full '> 
+    <div className='w-full flex '> 
 
         <div className='flex justify-between bg-red-200 min-w-full p-4 flex-col   container sm:flex-row md:flex-row'   >
            
-           <Logo height='10' width='200' className='mr-auto flex items-start' />
+           <Logo  className='mr-auto flex items-start ' />
 
            
 
@@ -32,13 +32,12 @@ function NavBar() {
                
             </div>
 
-            <button onClick={handleToggle} className='ml-auto sm:hidden absolute top-10 right-4' >
-              {isOpen ? <X size='30' /> : <Menu size='30' />}
+            <button 
+                onClick={handleToggle} 
+                className='ml-auto sm:hidden absolute top-6 right-4' 
+              >
+                {isOpen ? <X size='30' /> : <Menu size='30' />}
            </button>
-
-           
-
-           
               
                 {isOpen && 
                 <div >

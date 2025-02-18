@@ -9,7 +9,7 @@ function Logo() {
          <img 
                 src={LogoImg} 
                 alt="Logo" 
-                className='w-100 h-20 cursor-pointer'
+                className='w-100 h-10 sm:w-100 sm:h-20 md:w-100 md:h-20 lg:w-100 lg:h-20 cursor-pointer'
         />
 
     </div>
