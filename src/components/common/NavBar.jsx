@@ -15,7 +15,7 @@ function NavBar() {
   return (
     <div className='w-full flex '> 
 
-        <div className='flex justify-between bg-red-200 min-w-full p-4 flex-col fixed  container sm:flex-row md:flex-row'   >
+        <div className='flex justify-between bg-red-200 min-w-full p-4 flex-col   container sm:flex-row md:flex-row'   >
            
            <Logo  className='mr-auto flex items-start ' />
 

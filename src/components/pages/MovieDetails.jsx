@@ -24,16 +24,16 @@ const MovieDetails = () => {
       </Link>
 
       <div 
-            className= 'flex gap-[20px]'
+            className= 'flex gap-[20px] flex-col sm:flex-row items-center justify-center sm:justify-start'
         >
 
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
-          className= 'w-[300px] h-[450px] rounded-md m-4'
+          className= 'sm:w-[300px] sm:h-[450px] rounded-md m-4  w-[90%] h-[20em]'
         />
 
-        <div>
+        <div className='m-4 mt-0'>
 
           <h1 className='text-[#F5F5F5] font-bold text-[32px] font-sans tracking-[-0.41px] leading-[30px] mt-4 ml-16 mb-4'>{movie.title}</h1>
           <p className='text-[#F5F5F5] text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-start font-semibold'><strong className= 'text-[24px] text-blue-500 mr-3 font-extrabold'>Release Date:</strong> {movie.release_date}</p>

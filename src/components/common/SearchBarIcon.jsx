@@ -18,7 +18,7 @@ function SearchBarIcon() {
       
       {/* Search Bar */}
 
-      <div className="m-4 flex items-center justify-center sm:mt-32 mt-20">
+      <div className="m-4 flex items-center justify-center  ">
 
         <input
           type="search"
