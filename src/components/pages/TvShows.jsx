@@ -1,12 +1,12 @@
 import React from 'react'
-import SearchBar from '../common/SearchBar'
+import SearchBarIcon from '../common/SearchBarIcon'
 
 function TvShows() {
   return (
 
-    <div className='overflow-auto bg-[#461818]'>
+    <div className='overflow-auto bg-[#461818] h-svh'>
 
-      <SearchBar />
+      <SearchBarIcon />
       
     </div>
   )

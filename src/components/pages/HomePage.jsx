@@ -1,7 +1,9 @@
 import React from 'react'
-import SearchBar from '../common/SearchBar'
+
 import { useQuery } from '@tanstack/react-query'
 import { NavLink } from 'react-router'
+import SearchBarIcon from '../common/SearchBarIcon'
+
 
 //const apiKey1 = process.env.REACT_APP_API_KEY
 const apiKey = '95fbce6fd7f7a28cfc8577fc88fcac3f'
@@ -143,7 +145,7 @@ function HomePage() {
   return (
     <div className='overflow-auto bg-[#461818]'>
 
-        <SearchBar />
+      <SearchBarIcon />
 
             {/* Trending Movies */}
 

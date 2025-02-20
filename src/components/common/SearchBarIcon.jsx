@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import searchInput from '../images/bx-search.svg';
 import useSearchMovies from '../hooks/useSearchMovies';
 
-function SearchBar() {
+function SearchBarIcon() {
   const [query, setQuery] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const { data, isLoading, isError } = useSearchMovies(searchTerm);
@@ -18,7 +18,7 @@ function SearchBar() {
       
       {/* Search Bar */}
 
-      <div className="m-4 flex items-center justify-center">
+      <div className="m-4 flex items-center justify-center sm:mt-32 mt-20">
 
         <input
           type="search"
@@ -27,7 +27,7 @@ function SearchBar() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search for a movie"
-          className="w-1/2 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-200"
+          className="w-1/2 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-200  "
         />
 
         <button
@@ -91,4 +91,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export default SearchBarIcon;

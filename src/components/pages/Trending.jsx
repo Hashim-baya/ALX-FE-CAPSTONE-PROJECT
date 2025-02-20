@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchBar from '../common/SearchBar'
+import SearchBarIcon from '../common/SearchBarIcon'
 import { useQuery } from '@tanstack/react-query'
 import { NavLink } from 'react-router'
 
@@ -75,7 +75,7 @@ function Trending() {
   return (
     <div className='overflow-auto bg-[#461818]'>
 
-        <SearchBar />
+        <SearchBarIcon />
 
         {/* Weekly Trending */}
 

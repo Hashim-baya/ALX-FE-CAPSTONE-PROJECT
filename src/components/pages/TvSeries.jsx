@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
-import SearchBar from '../common/SearchBar'
+import SearchBarIcon from '../common/SearchBarIcon'
 import { NavLink } from 'react-router'
 
 
@@ -53,7 +53,7 @@ function TvSeries() {
   return (
     <div className='overflow-auto bg-[#461818]'>
 
-        <SearchBar />
+        <SearchBarIcon />
         
             {/* Popular TV Series */}
 

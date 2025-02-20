@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
-import SearchBar from '../common/SearchBar'
+import SearchBarIcon from '../common/SearchBarIcon'
 import { NavLink } from 'react-router'
 
 
@@ -199,11 +199,11 @@ function Movies() {
   return (
     <div className='overflow-auto bg-[#461818]'>
 
-      <SearchBar />
+     <SearchBarIcon />
 
         {/* Action Movies */}
 
-      <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Action</h1>
+      <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide '>Action</h1>
 
       <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto ' >
 
