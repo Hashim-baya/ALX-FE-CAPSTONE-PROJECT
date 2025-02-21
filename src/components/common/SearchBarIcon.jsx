@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router'; 
 import searchInput from '../images/bx-search.svg';
 import useSearchMovies from '../hooks/useSearchMovies';
+import NavBar from './NavBar';
 
 function SearchBarIcon() {
   const [query, setQuery] = useState('');
@@ -15,6 +16,8 @@ function SearchBarIcon() {
 
   return (
     <div>
+
+      
       
       {/* Search Bar */}
 

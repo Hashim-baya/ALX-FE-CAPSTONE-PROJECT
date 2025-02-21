@@ -3,6 +3,7 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { NavLink } from 'react-router'
 import SearchBarIcon from '../common/SearchBarIcon'
+import NavBarCarousel from '../common/NavBarCarousel'
 
 
 //const apiKey1 = process.env.REACT_APP_API_KEY
@@ -146,6 +147,7 @@ function HomePage() {
     <div className='overflow-auto bg-[#461818]'>
 
       <SearchBarIcon />
+
 
             {/* Trending Movies */}
 

@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link, NavLink } from 'react-router'
 import Logo from './Logo'
 import { Menu, X } from 'lucide-react'; 
+import NavBarCarousel from './NavBarCarousel';
 
 function NavBar() {
 
@@ -15,8 +16,10 @@ function NavBar() {
   return (
     <div className='w-full flex '> 
 
-        <div className='flex justify-between bg-red-200 min-w-full p-4 flex-col   container sm:flex-row md:flex-row'   >
+        <div className='flex relative justify-between bg-red-200 min-w-full p-4 flex-col   container sm:flex-row md:flex-row z-[1000]'   >
            
+           
+
            <Logo  className='mr-auto flex items-start ' />
 
            
