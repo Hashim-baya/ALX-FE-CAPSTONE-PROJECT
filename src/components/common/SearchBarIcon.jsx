@@ -35,7 +35,7 @@ function SearchBarIcon() {
 
         <button
           onClick={handleSearch}
-          className="bg-[#461818] p-2 rounded-lg ml-2 flex items-center justify-center"
+          className="bg-[#264653] p-2 rounded-lg ml-2 flex items-center justify-center"
         >
 
           <img

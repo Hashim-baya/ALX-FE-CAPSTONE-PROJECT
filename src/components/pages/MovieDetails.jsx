@@ -12,7 +12,7 @@ const MovieDetails = () => {
 
   return (
 
-    <div className='overflow-auto bg-[#461818] '>
+    <div className='overflow-auto bg-[#264653] '>
 
       <Link 
             to="/" 

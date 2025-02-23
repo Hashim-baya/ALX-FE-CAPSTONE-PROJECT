@@ -144,7 +144,7 @@ function HomePage() {
     }
 
   return (
-    <div className='overflow-auto bg-[#461818]'>
+    <div className='overflow-auto bg-[#264653]'>
 
       <SearchBarIcon />
 
