@@ -63,7 +63,7 @@ function NavBarCarousel() {
 
 
   return (
-    <div className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'>
+    <div className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px] bg-slate-500'>
 
         <Carousel 
             responsive={responsive}
