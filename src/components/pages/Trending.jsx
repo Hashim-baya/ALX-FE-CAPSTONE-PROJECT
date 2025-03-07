@@ -217,6 +217,8 @@ function Trending() {
 
         {/* Weekly Trending */}
 
+        <div className='md:mx-14 lg:mx-44'>
+
         <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Weekly Trending &#x1F525; </h1>
 
         <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '> 
@@ -244,46 +246,46 @@ function Trending() {
             ))}
 
             {data4?.results?.map((movie) => (
-                 <div 
+                <div 
                     key={movie.id}
                     className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-             >
+            >
 
-                 <NavLink to={`/movie/${movie.id}`}>
+                <NavLink to={`/movie/${movie.id}`}>
 
-                     <img  
-                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                         alt={movie.name}  
-                         className='sm:w-[200px]  w-[100px] rounded-md'
-                     />
+                    <img  
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.name}  
+                        className='sm:w-[200px]  w-[100px] rounded-md'
+                    />
 
-                 </NavLink>
+                </NavLink>
 
-                 <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
-             
-             </div>
+                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+            
+            </div>
             ))}
 
             {data5?.results?.map((movie) => (
 
-                 <div 
+                <div 
                     key={movie.id}
                     className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-             >
+            >
 
-                 <NavLink to={`/movie/${movie.id}`}>
+                <NavLink to={`/movie/${movie.id}`}>
 
-                     <img  
-                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                         alt={movie.name}  
-                         className='sm:w-[200px]  w-[100px] rounded-md'
-                     />
+                    <img  
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        alt={movie.name}  
+                        className='sm:w-[200px]  w-[100px] rounded-md'
+                    />
 
-                 </NavLink>
+                </NavLink>
 
-                 <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
-             
-             </div>
+                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+            
+            </div>
             ))}
 
             {data6?.results?.map((movie) => (
@@ -932,10 +934,13 @@ function Trending() {
 
                     <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
                     <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.known_for_department}</h3>
-               
+            
                 </div>
             ))}
         </div>
+
+        </div>
+        
        
     </div>
   )
