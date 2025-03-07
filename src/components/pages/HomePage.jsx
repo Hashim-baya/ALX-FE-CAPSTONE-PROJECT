@@ -168,7 +168,7 @@ function HomePage() {
                                 <img 
                                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                         alt={movie.title} 
-                                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-white'
+                                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                                 />
 
                             </NavLink>
@@ -194,7 +194,7 @@ function HomePage() {
                             <img 
                                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                     alt={movie.title} 
-                                    className='sm:w-[200px]  w-[100px] rounded-md'
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                             />
 
                         </NavLink>
@@ -220,7 +220,7 @@ function HomePage() {
                         <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.title} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                         />
 
                     </NavLink>
@@ -246,7 +246,7 @@ function HomePage() {
                         <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.title} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                         />
 
                     </NavLink>
@@ -272,7 +272,7 @@ function HomePage() {
                         <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.title} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                         />
 
                     </NavLink>
@@ -305,7 +305,7 @@ function HomePage() {
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.title} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                             />
 
                         </NavLink>
@@ -329,7 +329,7 @@ function HomePage() {
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.title} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                             />
 
                         </NavLink>
@@ -353,7 +353,7 @@ function HomePage() {
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.title} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                             />
 
                         </NavLink>
@@ -377,7 +377,7 @@ function HomePage() {
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.title} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                             />
 
                         </NavLink>
@@ -401,7 +401,7 @@ function HomePage() {
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.title} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                             />
 
                         </NavLink>
@@ -433,7 +433,7 @@ function HomePage() {
                                 <img 
                                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                     alt={movie.name} 
-                                    className='sm:w-[200px]  w-[100px] rounded-md'
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                                 />
 
                             </NavLink>
@@ -456,7 +456,7 @@ function HomePage() {
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.name} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                             />
 
                         </NavLink>
@@ -479,7 +479,7 @@ function HomePage() {
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.name} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                             />
 
                         </NavLink>
@@ -502,7 +502,7 @@ function HomePage() {
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.name} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                             />
 
                         </NavLink>
@@ -525,7 +525,7 @@ function HomePage() {
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.name} 
-                                className='sm:w-[200px]  w-[100px] rounded-md'
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                             />
 
                         </NavLink>
@@ -554,7 +554,7 @@ function HomePage() {
                                 <img 
                                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                     alt={movie.name} 
-                                    className='sm:w-[200px]  w-[100px] rounded-md'
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                                 />
 
                             </NavLink>
@@ -576,7 +576,7 @@ function HomePage() {
                                 <img 
                                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                     alt={movie.name} 
-                                    className='sm:w-[200px]  w-[100px] rounded-md'
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                                 />
 
                             </NavLink>
@@ -598,7 +598,7 @@ function HomePage() {
                                 <img 
                                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                     alt={movie.name} 
-                                    className='sm:w-[200px]  w-[100px] rounded-md'
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                                 />
 
                             </NavLink>
@@ -620,7 +620,7 @@ function HomePage() {
                                 <img 
                                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                     alt={movie.name} 
-                                    className='sm:w-[200px]  w-[100px] rounded-md'
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                                 />
 
                             </NavLink>
