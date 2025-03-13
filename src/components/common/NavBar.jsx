@@ -26,7 +26,7 @@ function NavBar() {
 
             <div className=' justify-between items-center mt-4 gap-4 sm:mt-0 hidden sm:flex ml-auto'>
                 
-                <NavLink to='/' className='text-[#e76f51] font-extrabold text-center'>HOME</NavLink>
+                <NavLink to='/home' className='text-[#e76f51] font-extrabold text-center'>HOME</NavLink>
                 <NavLink to='/trending'className='text-[#e76f51] font-extrabold text-center'>TRENDING</NavLink>
                 <NavLink to='/tvSeries'className='text-[#e76f51] font-extrabold text-center'>TV SERIES</NavLink>
                 <NavLink to='/movies'className='text-[#e76f51] font-extrabold text-center'>MOVIES</NavLink>
