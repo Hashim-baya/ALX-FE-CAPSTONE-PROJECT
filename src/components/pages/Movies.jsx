@@ -184,14 +184,14 @@ function Movies() {
   const mysteryMovies6 = data5?.results?.filter((movie) => movie.genre_ids.includes(9648))
 
 
-  //Western Movies
+  // Western Movies
 
-  // const westernMovies = data?.results?.filter((movie) => movie.genre_ids.includes(37))
-  // const westernMovies2 = data1?.results?.filter((movie) => movie.genre_ids.includes(37))
-  // const westernMovies3 = data2?.results?.filter((movie) => movie.genre_ids.includes(37))
-  // const westernMovies4 = data3?.results?.filter((movie) => movie.genre_ids.includes(37))
-  // const westernMovies5 = data4?.results?.filter((movie) => movie.genre_ids.includes(37))
-  // const westernMovies6 = data5?.results?.filter((movie) => movie.genre_ids.includes(37))
+  const westernMovies = data?.results?.filter((movie) => movie.genre_ids.includes(37))
+  const westernMovies2 = data1?.results?.filter((movie) => movie.genre_ids.includes(37))
+  const westernMovies3 = data2?.results?.filter((movie) => movie.genre_ids.includes(37))
+  const westernMovies4 = data3?.results?.filter((movie) => movie.genre_ids.includes(37))
+  const westernMovies5 = data4?.results?.filter((movie) => movie.genre_ids.includes(37))
+  const westernMovies6 = data5?.results?.filter((movie) => movie.genre_ids.includes(37))
 
 
 
@@ -2132,9 +2132,9 @@ function Movies() {
           </div>
 
                                                 
-          {/* Western Movies */}
+          {/* Western Movies  */}
 
-          {/* <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Western</h1>
+           <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Western</h1>
 
           <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
 
@@ -2272,7 +2272,7 @@ function Movies() {
               </div>
               ))}
 
-          </div> */}
+          </div>
         </div>
       
       

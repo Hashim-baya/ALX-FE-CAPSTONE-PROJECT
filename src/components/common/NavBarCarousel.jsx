@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useQuery } from '@tanstack/react-query';
 import { ButtonGroup } from './CarouselDots';
+import { NavLink } from 'react-router';
 
 const apiKey = '95fbce6fd7f7a28cfc8577fc88fcac3f'
 
@@ -79,47 +80,71 @@ function NavBarCarousel() {
         >
             {data?.results?.map((movie) => (
                 <div key={movie.id}>
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'
-                    />
+
+                    <NavLink to={`/movie/${movie.id}`}>
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'
+                        />
+                    </NavLink>
+                   
                 </div>
             ))}
+
             {data4?.results?.map((movie) => (
                 <div key={movie.id}>
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'
-                    />
+
+                    <NavLink to={`/movie/${movie.id}`}>
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'
+                        />
+                    </NavLink>
+                    
                 </div>
             ))}
+
             {data5?.results?.map((movie) => (
                 <div key={movie.id}>
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'
-                    />
+
+                    <NavLink to={`/movie/${movie.id}`}>
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'
+                        />
+                    </NavLink>
+                   
                 </div>
             ))}
+
             {data6?.results?.map((movie) => (
                 <div key={movie.id}>
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='relative w-[100%] h-[400px] ssm:h-[600px] md:h-[600px] lg:h-[700px]'
-                    />
+
+                    <NavLink to={`/movie/${movie.id}`}>
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='relative w-[100%] h-[400px] ssm:h-[600px] md:h-[600px] lg:h-[700px]'
+                        />
+                    </NavLink>
+                   
                 </div>
             ))}
+
             {data7?.results?.map((movie) => (
                 <div key={movie.id}>
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'
-                    />
+
+                    <NavLink to={`/movie/${movie.id}`}>
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'
+                        />
+                    </NavLink>
+                   
                 </div>
             ))}
         </Carousel>;
