@@ -2,6 +2,10 @@ import React from 'react'
 import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { NavLink } from 'react-router'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth, db }  from './Firebase'
+import { toast } from 'react-toastify'
+import { setDoc, doc } from 'firebase/firestore'
 
 const validationSchema = Yup.object({
     FirstName: Yup.string().max(20, "Must be 20 characters or less").required("Required"),
@@ -12,6 +16,40 @@ const validationSchema = Yup.object({
 })
 
 function SignUp() {
+
+    const handleRegister = async (values, { setSubmitting }) => {
+        try {
+            await createUserWithEmailAndPassword(auth, values.email, values.password);
+            const user = auth.currentUser;
+            console.log(user);
+            if(user){
+                await setDoc(doc(db, "Users", user.uid), {
+                    FirstName: values.FirstName,
+                    LastName: values.LastName,
+                    email: values.email,
+                    createdAt: new Date(),
+                })
+            }
+            toast.success('Registration successful!', {
+                position: "top-center",
+               
+            });
+            window.location.href = '/login';
+            
+        } catch (error) {
+            console.error("Error during registration:", error.message);
+            if (error.code === 'auth/network-request-failed') {
+                alert('Network error. Please check your internet connection.');
+            } else {
+                toast.error(error.message, {
+                    position: "bottom-center",
+                });
+            }
+        } finally {
+            setSubmitting(false);
+        }
+    }
+
   return (
     <Formik
         initialValues={{
@@ -22,12 +60,7 @@ function SignUp() {
             confirmPassword: ''
         }}
         validationSchema={validationSchema}
-        onsubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-                alert(JSON.stringify(values, null, 2))
-                setSubmitting(false)
-            }, 400)
-        }}
+        onSubmit={handleRegister}
     >
         <Form>
             <div className='flex flex-col gap-4 p-4 justify-center w-[80%] md:w-[60%] lg:w-[40%] m-auto my-[30%] lg:my-[10%] rounded-md bg-[rgb(186,224,255)] '>

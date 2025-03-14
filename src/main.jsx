@@ -14,6 +14,7 @@ import TvShows from './components/pages/TvShows.jsx'
 import MovieDetails from './components/pages/MovieDetails.jsx'
 import SignUp from './components/common/SignUp.jsx'
 import Login from './components/common/Login.jsx'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const router = createBrowserRouter(
@@ -76,6 +77,7 @@ createRoot(document.getElementById('root')).render(
       </RouterProvider>
     </StrictMode>,
     <ReactQueryDevtools initialIsOpen={false} />
+    <ToastContainer />
   </QueryClientProvider>
   
   

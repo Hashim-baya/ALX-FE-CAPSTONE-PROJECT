@@ -2,15 +2,32 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { NavLink } from 'react-router'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { toast } from 'react-toastify'
+import { auth } from './Firebase'
 
+
+const validationSchema = Yup.object({
+  email: Yup.string().email("Invalid email address").required("Required"),
+  password: Yup.string().min(6, "Password must be at least 6 characters").required("Required")
+})
 function Login() {
 
-  const validationSchema = Yup.object({
-    email: Yup.string().email("Invalid email address").required("Required"),
-    password: Yup.string().min(6, "Password must be at least 6 characters").required("Required")
-  })
-
-
+ const handleLogin = async (values, { setSubmitting }) => {
+    try {
+      await signInWithEmailAndPassword(auth, values.email, values.password);
+      window.location.href = '/home';
+      toast.success('Login successful!', {
+        position: "top-center",
+      });
+    } catch (error) {
+      toast.error(error.message, {
+        position: "bottom-center",
+      });
+    } finally {
+      setSubmitting(false);
+    }
+ }
   return (
     <Formik
       initialValues={{
@@ -18,12 +35,7 @@ function Login() {
         password: ''
       }}
       validationSchema={validationSchema}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2))
-          setSubmitting(false)
-        }, 400)
-      }}
+      onSubmit={handleLogin}
     >
       <Form>
         <div className='flex flex-col gap-4 p-4 justify-center w-[80%] md:w-[60%] lg:w-[40%] m-auto my-[30%] lg:my-[10%] rounded-md bg-[rgb(186,224,255)] '>
