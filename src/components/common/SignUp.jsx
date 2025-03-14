@@ -1,7 +1,7 @@
 import React from 'react'
 import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { NavLink } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth, db }  from './Firebase'
 import { toast } from 'react-toastify'
@@ -16,6 +16,8 @@ const validationSchema = Yup.object({
 })
 
 function SignUp() {
+
+    const navigate = useNavigate();
 
     const handleRegister = async (values, { setSubmitting }) => {
         try {
@@ -34,7 +36,7 @@ function SignUp() {
                 position: "top-center",
                
             });
-            window.location.href = '/login';
+            navigate('/login') ;
             
         } catch (error) {
             console.error("Error during registration:", error.message);

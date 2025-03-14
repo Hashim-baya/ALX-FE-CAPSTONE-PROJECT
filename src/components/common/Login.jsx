@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
-import { NavLink } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { toast } from 'react-toastify'
 import { auth } from './Firebase'
@@ -13,10 +13,11 @@ const validationSchema = Yup.object({
 })
 function Login() {
 
+  const navigate = useNavigate();
  const handleLogin = async (values, { setSubmitting }) => {
     try {
       await signInWithEmailAndPassword(auth, values.email, values.password);
-      window.location.href = '/home';
+      navigate('/home');
       toast.success('Login successful!', {
         position: "top-center",
       });
