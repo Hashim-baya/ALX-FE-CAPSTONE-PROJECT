@@ -15,7 +15,7 @@ const MovieDetails = () => {
     <div className='overflow-auto bg-[#264653] '>
 
       <Link 
-            to="/" 
+            to="/home" 
             className='m-[20px] inline-block text-[#F5F5F5] font-sans font-semibold hover:text-blue-400' 
         >
 

@@ -39,18 +39,18 @@ function Login() {
       onSubmit={handleLogin}
     >
       <Form>
-        <div className='flex flex-col gap-4 p-4 justify-center w-[80%] md:w-[60%] lg:w-[40%] m-auto my-[30%] lg:my-[10%] rounded-md bg-[rgb(186,224,255)] '>
+        <div className='flex flex-col gap-4 p-4 justify-center w-[80%] md:w-[60%] lg:w-[40%] m-auto my-[30%] lg:my-[10%] rounded-md bg-[#FFFFFF] '>
           <h1 className='text-2xl font-bold text-center text-blue-700'>LOGIN</h1>
 
           <div>
             <label htmlFor="email" className='font-semibold  text-[1.2rem] '>Email</label><br />
-            <Field type="email" id="email" name="email" placeholder="example@email.com" className="w-[100%] p-2 rounded-md outline-none font-light mt-2" />
+            <Field type="email" id="email" name="email" placeholder="example@email.com" className="w-[100%] p-2 rounded-md outline-none font-light mt-2 bg-slate-100" />
             <ErrorMessage name="email" component="div" className='text-red-600 font-bold text-[1rem] mt-2' />
           </div>
 
           <div>
             <label htmlFor="password" className='font-semibold  text-[1.2rem] '>Password</label><br />
-            <Field type="password" id="password" name="password"  className="w-[100%] p-2 rounded-md outline-none font-light mt-2" />
+            <Field type="password" id="password" name="password"  className="w-[100%] p-2 rounded-md outline-none font-light mt-2 bg-slate-100" />
             <ErrorMessage name="password" component="div" className='text-red-600 font-bold text-[1rem] mt-2' />
           </div>
 

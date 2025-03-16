@@ -8,7 +8,7 @@ import NavBarCarousel from './NavBarCarousel'
 function Layout() {
   return (
     <div>
-      <NavBarCarousel />
+        <NavBarCarousel />
         <NavBar />
         <Outlet />
         <Footer />
