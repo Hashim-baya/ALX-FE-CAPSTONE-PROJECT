@@ -67,38 +67,38 @@ function SignUp() {
     >
         <Form>
             <div className='flex flex-col gap-4 p-4 justify-center w-[80%] md:w-[60%] lg:w-[40%] m-auto my-[30%] lg:my-[10%] rounded-md bg-[#FFFFFF] '>
-                <h1 className='text-2xl font-bold text-center text-blue-700'>CREATE NEW ACCOUNT</h1>
+                <h1 className='lg:text-2xl text-xl font-bold text-center text-blue-700'>CREATE NEW ACCOUNT</h1>
                 <div>
-                    <label htmlFor="FirstName" className='font-semibold  text-[1.2rem] '>First Name</label><br />
+                    <label htmlFor="FirstName" className='font-semibold text-[0.9rem] lg:text-[1.2rem] '>First Name</label><br />
                     <Field type="text" id="FirstName" name="FirstName" placeholder="First Name" className="w-[100%] p-2 rounded-md outline-none font-light mt-2 bg-slate-100" />
                     <ErrorMessage name="FirstName"  component="div" className='text-red-600 font-bold text-[1rem] mt-2'/>
                 </div>
 
                 <div>
-                    <label htmlFor="LastName" className='font-semibold  text-[1.2rem] '>Last Name</label><br />
+                    <label htmlFor="LastName" className='font-semibold text-[0.9rem] lg:text-[1.2rem] '>Last Name</label><br />
                     <Field type="text" id="LastName" name="LastName" placeholder="Last Name" className="w-[100%] p-2 rounded-md outline-none font-light mt-2 bg-slate-100" />
                     <ErrorMessage name="LastName"  component="div" className='text-red-600 font-bold text-[1rem] mt-2' />
                 </div>
 
                 <div>
-                    <label htmlFor="email" className='font-semibold  text-[1.2rem] '>Email</label><br />
+                    <label htmlFor="email" className='font-semibold text-[0.9rem]lg:text-[1.2rem] '>Email</label><br />
                     <Field type="email" id="email" name="email" placeholder="example@gmail.com" className="w-[100%] p-2 rounded-md outline-none font-light mt-2 bg-slate-100" />
                     <ErrorMessage name="email"  component="div" className='text-red-600 font-bold text-[1rem] mt-2' />
                 </div>
 
                 <div>
-                    <label htmlFor="password" className='font-semibold  text-[1.2rem] '>Password</label><br />
+                    <label htmlFor="password" className='font-semibold text-[0.9rem] lg:text-[1.2rem] '>Password</label><br />
                     <Field type="password" id="password" name="password" className="w-[100%] p-2 rounded-md outline-none font-light mt-2 bg-slate-100"  />
                     <ErrorMessage name="password"  component="div" className='text-red-600 font-bold text-[1rem] mt-2' />
                 </div>
 
                 <div>
-                    <label htmlFor="confirmPassword" className='font-semibold  text-[1.2rem] '>Confirm Password</label><br />
+                    <label htmlFor="confirmPassword" className='font-semibold text-[0.9rem] lg:text-[1.2rem] '>Confirm Password</label><br />
                     <Field type="password" id="" name="confirmPassword" className="w-[100%] p-2 rounded-md outline-none font-light mt-2 bg-slate-100"  />
                     <ErrorMessage name="confirmPassword"  component="div" className='text-red-600 font-bold text-[1rem] mt-2' />
                 </div>
 
-                <button type="submit" className='w-[100%] p-2 rounded-md outline-none font-bold tracking-widest text-[1.2rem] mt-2 bg-blue-600 text-[#F5F5F5] hover:bg-blue-500'>Sign Up</button>
+                <button type="submit" className='w-[100%] p-2 rounded-md outline-none font-bold tracking-widest text-[0.9rem] lg:text-[1.2rem] mt-2 bg-blue-600 text-[#F5F5F5] hover:bg-blue-500'>Sign Up</button>
 
                 <div className='flex justify-center'>
                     <NavLink to="/login" className="text-blue-500 ">Already have an account? Sign In</NavLink>
