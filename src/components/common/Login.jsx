@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from 'react-router'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { toast } from 'react-toastify'
 import { auth } from './Firebase'
+import SignInWithGoogle from './SignInWithGoogle'
 
 
 const validationSchema = Yup.object({
@@ -59,6 +60,8 @@ function Login() {
           <div className='flex justify-center'>
             <NavLink to="/signup" className="text-blue-500 ">Don't have an account? Sign Up</NavLink>
           </div>
+
+          <SignInWithGoogle />
         </div>
       </Form>
     </Formik>

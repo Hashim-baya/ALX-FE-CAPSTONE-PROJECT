@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth, db }  from './Firebase'
 import { toast } from 'react-toastify'
 import { setDoc, doc } from 'firebase/firestore'
+import SignInWithGoogle from './SignInWithGoogle'
 
 const validationSchema = Yup.object({
     FirstName: Yup.string().max(20, "Must be 20 characters or less").required("Required"),
@@ -103,6 +104,7 @@ function SignUp() {
                     <NavLink to="/login" className="text-blue-500 ">Already have an account? Sign In</NavLink>
                 </div>
 
+                <SignInWithGoogle />
             </div>
            
            

@@ -1,15 +1,33 @@
 import React, {useState} from 'react'
-import { Link, NavLink } from 'react-router'
+import { Link, NavLink, useNavigate } from 'react-router'
 import Logo from './Logo'
 import { Menu, X } from 'lucide-react'; 
 import NavBarCarousel from './NavBarCarousel';
+import { auth } from './Firebase';
+import { toast } from 'react-toastify';
 
 function NavBar() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleToggle = () => {
     setIsOpen(!isOpen); 
+  }
+
+  const handleLogout = async() => {
+    try {
+      await auth.signOut();
+      navigate('/login');
+      toast.success('Logout successful!', {
+        position: "top-center",
+      })
+    } catch (error) {
+      toast.error(error.message, {
+        position: "bottom-center",
+      })
+    }
   }
 
 
@@ -31,7 +49,7 @@ function NavBar() {
                 <NavLink to='/tvSeries'className='text-[#e76f51] font-extrabold text-center'>TV SERIES</NavLink>
                 <NavLink to='/movies'className='text-[#e76f51] font-extrabold text-center'>MOVIES</NavLink>
                 <NavLink to='/tvShows'className='text-[#e76f51] font-extrabold text-center'>TV SHOWS</NavLink>
-                <NavLink to='#' className='text-purple-800 font-extrabold rounded-sm border-4 p-2 bg-blue-200 border-blue-50 hover:bg-slate-100 cursor-pointer ml-4 text-center'>LOGOUT</NavLink>
+                <NavLink to='#' onClick={handleLogout} className='text-purple-800 font-extrabold rounded-sm border-4 p-2 bg-blue-200 border-blue-50 hover:bg-slate-100 cursor-pointer ml-4 text-center'>LOGOUT</NavLink>
                
             </div>
 
@@ -52,7 +70,7 @@ function NavBar() {
                     <NavLink to='/tvSeries'className='text-[#e76f51] font-extrabold text-center'>TV SERIES</NavLink>
                     <NavLink to='/movies'className='text-[#e76f51] font-extrabold text-center'>MOVIES</NavLink>
                     <NavLink to='/tvShows'className='text-[#e76f51] font-extrabold text-center'>TV SHOWS</NavLink>
-                    <NavLink to='#' className='text-purple-800 font-extrabold rounded-sm border-4 p-2 bg-blue-200 border-blue-50 hover:bg-slate-100 cursor-pointer ml-4 text-center'>LOGOUT</NavLink>
+                    <NavLink to='/login' className='text-purple-800 font-extrabold rounded-sm border-4 p-2 bg-blue-200 border-blue-50 hover:bg-slate-100 cursor-pointer ml-4 text-center'>LOGOUT</NavLink>
                     
                   </div>
                 </div>

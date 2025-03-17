@@ -15,7 +15,7 @@ import MovieDetails from './components/pages/MovieDetails.jsx'
 import SignUp from './components/common/SignUp.jsx'
 import Login from './components/common/Login.jsx'
 import { ToastContainer, toast } from 'react-toastify';
-
+import { Analytics } from "@vercel/analytics/react"
 
 const router = createBrowserRouter(
   [
@@ -78,6 +78,7 @@ createRoot(document.getElementById('root')).render(
     </StrictMode>,
     <ReactQueryDevtools initialIsOpen={false} />
     <ToastContainer />
+    <Analytics />
   </QueryClientProvider>
   
   
