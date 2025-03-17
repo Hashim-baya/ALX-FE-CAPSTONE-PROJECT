@@ -48,7 +48,9 @@ function SearchBarIcon() {
       </div>
 
       {/* Results */}
-      {isLoading && <p className="text-center text-gray-500">Loading...</p>}
+      {isLoading && (
+        <p className="text-center text-2xl text-gray-500">Loading...</p>
+      )}
       {isError && <p className="text-center text-red-500">An error occurred while searching for movies.</p>}
 
 
@@ -56,7 +58,7 @@ function SearchBarIcon() {
       {data?.results?.length > 0 && (
 
         
-        <ul className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+        <ul className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto md:mx-14 lg:mx-44' >
 
           {data.results.map((movie) => (
 

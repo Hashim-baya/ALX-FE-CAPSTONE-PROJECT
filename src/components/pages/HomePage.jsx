@@ -136,7 +136,7 @@ function HomePage() {
     })
     
     if(isLoading){
-        return <div>Loading...</div>
+        return <div className='text-[#F5F5F5] font-sans font-semibold animate-ping'>Loading...</div>
     }
 
     if(error){
