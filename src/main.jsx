@@ -16,6 +16,7 @@ import SignUp from './components/common/SignUp.jsx'
 import Login from './components/common/Login.jsx'
 import { ToastContainer, toast } from 'react-toastify';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const router = createBrowserRouter(
   [
@@ -79,6 +80,7 @@ createRoot(document.getElementById('root')).render(
     <ReactQueryDevtools initialIsOpen={false} />
     <ToastContainer />
     <Analytics />
+    <SpeedInsights />
   </QueryClientProvider>
   
   
