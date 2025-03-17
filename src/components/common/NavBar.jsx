@@ -65,7 +65,7 @@ function NavBar() {
                 <div >
                   <div className='flex flex-col gap-4 flex-wrap items-center justify-center mt-4  sm:hidden md:hidden'>
 
-                    <NavLink to='/' className='text-[#e76f51] font-extrabold text-center'>HOME</NavLink>
+                    <NavLink to='/home' className='text-[#e76f51] font-extrabold text-center'>HOME</NavLink>
                     <NavLink to='/trending'className='text-[#e76f51] font-extrabold text-center'>TRENDING</NavLink>
                     <NavLink to='/tvSeries'className='text-[#e76f51] font-extrabold text-center'>TV SERIES</NavLink>
                     <NavLink to='/movies'className='text-[#e76f51] font-extrabold text-center'>MOVIES</NavLink>
