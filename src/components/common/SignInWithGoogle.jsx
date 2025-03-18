@@ -29,7 +29,11 @@ function SignInWithGoogle() {
     }
   return (
     <div>
-        <p className='text-center text-gray-300'>-----------------------or-----------------------</p>
+        <div className="flex items-center my-2">
+            <div className="flex-grow border-t border-gray-300"></div>
+                <span className="mx-2 text-gray-400">or</span>
+            <div className="flex-grow border-t border-gray-300"></div>
+        </div>
         <div onClick={googleLogin} className='hover:cursor-pointer flex items-center justify-start gap-10 lg:gap-20 w-[100%] p-2 rounded-md outline-none font-bold tracking-widest text-[0.9rem] lg:text-[1.2rem] mt-2 bg-blue-600 text-[#F5F5F5] hover:bg-blue-500'>
             <div>
                <img src={Google} alt="Google Logo" height={30} width={30} />
