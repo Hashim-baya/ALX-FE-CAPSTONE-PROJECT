@@ -25,19 +25,19 @@ function Footer() {
     }
   }
   return (
-    <div className='absolute  flex items-center p-4 bg-[#f4a26160] w-full flex-col justify-center '>
+    <div className='absolute  flex items-center p-4 bg-[#4d6d7a] w-full flex-col justify-center '>
        
         <div className='flex items-center justify-center sm:space-x-96  flex-col sm:flex-row'>
            
            <Logo />
 
-            <div className='flex justify-between items-center flex-col ms-0 w-3/4 mt-4 sm:mt-0 sm:w-1/4'>
-                <NavLink to='/home' className='text-[#e76f51] text-[0.7rem] font-extrabold text-center'>HOME</NavLink>
-                <NavLink to='/trending' className='text-[#e76f51] text-[0.7rem] font-extrabold text-center'>TRENDING</NavLink>
-                <NavLink to='/tvSeries' className='text-[#e76f51] text-[0.7rem] font-extrabold text-center'>TV SERIES</NavLink>
-                <NavLink to='/movies' className='text-[#e76f51] text-[0.7rem] font-extrabold text-center'>MOVIES</NavLink>
-                <NavLink to='/tvShows' className='text-[#e76f51] text-[0.7rem] font-extrabold text-center'>TV SHOWS</NavLink>
-                <NavLink to='#' onClick={handleLogout} className='text-purple-800 font-extrabold text-sm rounded-sm border-4 p-2 bg-blue-200 border-blue-50 hover:bg-slate-100 cursor-pointer ml-4 text-center'>LOGOUT</NavLink>
+            <div className='flex justify-between items-start gap-7 ms-0 mt-4 sm:mt-0'>
+                <NavLink to='/home' className=' text-orange-900 text-[0.9rem] font-semibold text-center'>HOME</NavLink>
+                <NavLink to='/trending' className=' text-orange-900 text-[0.9rem] font-semibold text-center'>TRENDING</NavLink>
+                <NavLink to='/tvSeries' className='text-orange-900 text-[0.9rem] font-semibold text-center'>TV SERIES</NavLink>
+                <NavLink to='/movies' className=' text-orange-900 text-[0.9rem] font-semibold text-center'>MOVIES</NavLink>
+                <NavLink to='/tvShows' className=' text-orange-900 text-[0.9rem] font-semibold text-center'>TV SHOWS</NavLink>
+                
             </div>
 
         </div>

@@ -31,6 +31,7 @@ function Login() {
     }
  }
   return (
+    <div className='bg-[url("https://images.unsplash.com/photo-1731432245325-d820144afe4a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] h-screen min-h-screen bg-cover bg-center absolute inset-0 '>
     <Formik
       initialValues={{
         email: '',
@@ -65,6 +66,7 @@ function Login() {
         </div>
       </Form>
     </Formik>
+    </div>
   )
 }
 

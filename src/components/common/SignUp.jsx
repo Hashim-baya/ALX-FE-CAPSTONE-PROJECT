@@ -54,7 +54,8 @@ function SignUp() {
     }
 
   return (
-    <Formik
+    <div className='bg-[url("https://images.unsplash.com/photo-1731432245325-d820144afe4a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] h-screen min-h-screen bg-cover bg-center absolute inset-0 '>
+         <Formik
         initialValues={{
             FirstName: '',
             LastName: '',
@@ -66,7 +67,7 @@ function SignUp() {
         onSubmit={handleRegister}
     >
         <Form>
-            <div className='flex flex-col gap-4 p-4 justify-center w-[80%] md:w-[60%] lg:w-[40%] m-auto my-[30%] lg:my-[10%] rounded-md bg-[#FFFFFF] '>
+            <div className='flex flex-col gap-4 p-4 justify-center w-[80%]  md:w-[60%] lg:w-[40%] m-auto my-[30%] lg:my-[10%] rounded-md bg-[#ffffff] '>
                 <h1 className='lg:text-xl  font-bold text-center text-blue-700'>CREATE NEW ACCOUNT</h1>
                 <div>
                     <label htmlFor="FirstName" className='font-semibold text-[0.9rem] lg:text-[1.2rem] '>First Name</label><br />
@@ -110,6 +111,8 @@ function SignUp() {
            
         </Form>
     </Formik>
+    </div>
+   
   )
 }
 

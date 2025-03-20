@@ -141,7 +141,7 @@ function NavBarCarousel() {
                         <img 
                             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                             alt={movie.title} 
-                            className='relative w-[100%] h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'
+                            className='relative w-[100%]  h-[400px] sm:h-[600px] md:h-[600px] lg:h-[700px]'
                         />
                     </NavLink>
                    

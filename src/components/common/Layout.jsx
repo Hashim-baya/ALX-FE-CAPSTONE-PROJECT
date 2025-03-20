@@ -8,8 +8,8 @@ import NavBarCarousel from './NavBarCarousel'
 function Layout() {
   return (
     <div>
+       <NavBar />
         <NavBarCarousel />
-        <NavBar />
         <Outlet />
         <Footer />
         

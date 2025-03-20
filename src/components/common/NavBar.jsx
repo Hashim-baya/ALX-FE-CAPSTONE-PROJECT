@@ -34,7 +34,7 @@ function NavBar() {
   return (
     <div className='w-full flex '> 
 
-        <div className='flex relative justify-between bg-[#f4a26160] min-w-full p-4 flex-col   container sm:flex-row md:flex-row z-[1000]'   >
+        <div className='flex relative justify-between bg-[#a06a4b60] min-w-full p-4 flex-col   container sm:flex-row md:flex-row z-[1000]'   >
            
            
 
