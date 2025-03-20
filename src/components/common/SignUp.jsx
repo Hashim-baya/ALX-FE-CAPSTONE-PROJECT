@@ -67,7 +67,7 @@ function SignUp() {
     >
         <Form>
             <div className='flex flex-col gap-4 p-4 justify-center w-[80%] md:w-[60%] lg:w-[40%] m-auto my-[30%] lg:my-[10%] rounded-md bg-[#FFFFFF] '>
-                <h1 className='lg:text-2xl text-xl font-bold text-center text-blue-700'>CREATE NEW ACCOUNT</h1>
+                <h1 className='lg:text-xl  font-bold text-center text-blue-700'>CREATE NEW ACCOUNT</h1>
                 <div>
                     <label htmlFor="FirstName" className='font-semibold text-[0.9rem] lg:text-[1.2rem] '>First Name</label><br />
                     <Field type="text" id="FirstName" name="FirstName" placeholder="First Name" className="w-[100%] p-2 rounded-md outline-none font-light mt-2 bg-slate-100" />
@@ -101,7 +101,7 @@ function SignUp() {
                 <button type="submit" className='w-[100%] p-2 rounded-md outline-none font-bold tracking-widest text-[0.9rem] lg:text-[1.2rem] mt-2 bg-blue-600 text-[#F5F5F5] hover:bg-blue-500'>Sign Up</button>
 
                 <div className='flex justify-center'>
-                    <NavLink to="/login" className="text-blue-500 ">Already have an account? Sign In</NavLink>
+                    <p >Already have an account?<NavLink to="/login" className="text-blue-500 "> Sign In</NavLink></p>
                 </div>
 
                 <SignInWithGoogle />

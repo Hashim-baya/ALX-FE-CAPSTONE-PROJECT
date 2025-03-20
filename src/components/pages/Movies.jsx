@@ -2,9 +2,45 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import SearchBarIcon from '../common/SearchBarIcon'
 import { NavLink } from 'react-router'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 
 const apiKey = '95fbce6fd7f7a28cfc8577fc88fcac3f'
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 1530 },
+    items: 6,
+    slidesToSlide: 5
+  },
+  largeDesktop: {
+    breakpoint: { max: 1530, min: 1194 },
+    items: 5,
+    slidesToSlide: 4,
+  },
+  desktop: {
+    breakpoint: { max: 1194, min: 990 },
+    items: 4,
+    slidesToSlide: 3
+  },
+  largeTablet: {
+    breakpoint: { max:990, min: 670 },
+    items: 3,
+    slidesToSlide: 2
+  },
+  tablet: {
+    breakpoint: { max: 670, min: 464 },
+    items: 4,
+    slidesToSlide: 3
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 3,
+    slidesToSlide: 2
+  }
+};
 
 function Movies() {
 
@@ -204,9 +240,21 @@ function Movies() {
         {/* Action Movies */}
 
         <div className='md:mx-14 lg:mx-44'>
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide '>Action</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide '>Action</h1>
 
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto ' >
+        <Carousel
+                    responsive={responsive}
+                    showDots={false}
+                    autoPlay={true}
+                    autoPlaySpeed={3000}
+                    infinite={true}
+                    keyBoardControl={true}
+                    customTransition="all .5"
+                    transitionDuration={500}
+                    dotListClass="custom-dot-list-style"
+                    containerClass="carousel-container"
+                    itemClass="carousel-item-padding-2-px"
+                >
 
         {actionMovies.map((movie) => (
 
@@ -357,14 +405,25 @@ function Movies() {
         </div>
         ))}
 
-        </div>
+        </Carousel>
 
           {/* Science Fiction Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>SCI-FI</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>SCI-FI</h1>
 
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
-
+        <Carousel
+                    responsive={responsive}
+                    showDots={false}
+                    autoPlay={true}
+                    autoPlaySpeed={3000}
+                    infinite={true}
+                    keyBoardControl={true}
+                    customTransition="all .5"
+                    transitionDuration={500}
+                    dotListClass="custom-dot-list-style"
+                    containerClass="carousel-container"
+                    itemClass="carousel-item-padding-2-px"
+                >
           {scienceFiction?.map((movie) => (
 
             <div 
@@ -506,13 +565,25 @@ function Movies() {
           </div>
           ))}
 
-        </div>
+        </Carousel>
 
           {/* Animation Movies */}
 
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Animation</h1>
+        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Animation</h1>
 
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+       <Carousel
+                   responsive={responsive}
+                   showDots={false}
+                   autoPlay={true}
+                   autoPlaySpeed={3000}
+                   infinite={true}
+                   keyBoardControl={true}
+                   customTransition="all .5"
+                   transitionDuration={500}
+                   dotListClass="custom-dot-list-style"
+                   containerClass="carousel-container"
+                   itemClass="carousel-item-padding-2-px"
+               >
 
           {animationMovies?.map((movie) => (
 
@@ -663,13 +734,25 @@ function Movies() {
           </div>
           ))}
 
-        </div>
+        </Carousel>
 
           {/* Horror Movies */}
 
-          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Horror</h1>
+          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Horror</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+          <Carousel
+                      responsive={responsive}
+                      showDots={false}
+                      autoPlay={true}
+                      autoPlaySpeed={3000}
+                      infinite={true}
+                      keyBoardControl={true}
+                      customTransition="all .5"
+                      transitionDuration={500}
+                      dotListClass="custom-dot-list-style"
+                      containerClass="carousel-container"
+                      itemClass="carousel-item-padding-2-px"
+                  >
 
             {horrorMovies?.map((movie) => (
 
@@ -809,13 +892,25 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
 
           {/* Crime Movies */}
 
-          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Crime</h1>
+          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Crime</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+            <Carousel
+              responsive={responsive}
+              showDots={false}
+              autoPlay={true}
+              autoPlaySpeed={3000}
+              infinite={true}
+              keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              dotListClass="custom-dot-list-style"
+              containerClass="carousel-container"
+              itemClass="carousel-item-padding-2-px"
+          >
 
             {crimeMovies?.map((movie) => (
 
@@ -955,13 +1050,25 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
 
         {/* Comedy Movies */}
 
-          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Comedy</h1>
+          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Comedy</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+          <Carousel
+            responsive={responsive}
+            showDots={false}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            dotListClass="custom-dot-list-style"
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-2-px"
+        >
 
             {comedyMovies?.map((movie) => (
 
@@ -1101,14 +1208,25 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
 
           {/* Drama Movies */}
 
-          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Drama</h1>
+          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Drama</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
-
+        <Carousel
+            responsive={responsive}
+            showDots={false}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            dotListClass="custom-dot-list-style"
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-2-px"
+        >
             {dramaMovies?.map((movie) => (
 
               <div 
@@ -1247,14 +1365,26 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
 
           
           {/* Romance Movies */}
 
-          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Romance</h1>
+          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Romance</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+          <Carousel
+            responsive={responsive}
+            showDots={false}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            dotListClass="custom-dot-list-style"
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-2-px"
+        >
 
             {romanceMovies?.map((movie) => (
 
@@ -1394,14 +1524,26 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
 
           
           {/* Thriller Movies */}
 
-          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Thriller</h1>
+          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Thriller</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+          <Carousel
+            responsive={responsive}
+            showDots={false}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            dotListClass="custom-dot-list-style"
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-2-px"
+        >
 
             {thrillerMovies?.map((movie) => (
 
@@ -1541,14 +1683,26 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
 
                 
           {/* Fantasy Movies */}
 
-          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Fantasy</h1>
+          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Fantasy</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+          <Carousel
+            responsive={responsive}
+            showDots={false}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            dotListClass="custom-dot-list-style"
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-2-px"
+        >
 
             {fantasyMovies?.map((movie) => (
 
@@ -1688,14 +1842,26 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
 
                         
           {/* Adventure Movies */}
 
-          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Adventure</h1>
+          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Adventure</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+          <Carousel
+            responsive={responsive}
+            showDots={false}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            dotListClass="custom-dot-list-style"
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-2-px"
+        >
 
             {adventureMovies?.map((movie) => (
 
@@ -1835,14 +2001,26 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
 
                                 
           {/* Family Movies */}
 
-          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Family</h1>
+          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Family</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+          <Carousel
+            responsive={responsive}
+            showDots={false}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            dotListClass="custom-dot-list-style"
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-2-px"
+        >
 
             {familyMovies?.map((movie) => (
 
@@ -1982,14 +2160,26 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
 
                                         
           {/* Mystery Movies */}
 
-          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Mystery</h1>
+          <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Mystery</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+         <Carousel
+            responsive={responsive}
+            showDots={false}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            dotListClass="custom-dot-list-style"
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-2-px"
+        >
 
             {mysteryMovies?.map((movie) => (
 
@@ -2129,14 +2319,26 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
 
                                                 
           {/* Western Movies  */}
 
-           <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Western</h1>
+           <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Western</h1>
 
-          <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+          <Carousel
+            responsive={responsive}
+            showDots={false}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            dotListClass="custom-dot-list-style"
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-2-px"
+        >
 
             {westernMovies?.map((movie) => (
 
@@ -2272,7 +2474,7 @@ function Movies() {
               </div>
               ))}
 
-          </div>
+          </Carousel>
         </div>
       
       

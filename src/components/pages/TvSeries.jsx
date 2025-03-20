@@ -2,9 +2,45 @@ import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import SearchBarIcon from '../common/SearchBarIcon'
 import { NavLink } from 'react-router'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 
 const apiKey = '95fbce6fd7f7a28cfc8577fc88fcac3f'
+
+const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 1530 },
+      items: 6,
+      slidesToSlide: 5
+    },
+    largeDesktop: {
+      breakpoint: { max: 1530, min: 1194 },
+      items: 5,
+      slidesToSlide: 4,
+    },
+    desktop: {
+      breakpoint: { max: 1194, min: 990 },
+      items: 4,
+      slidesToSlide: 3
+    },
+    largeTablet: {
+      breakpoint: { max:990, min: 670 },
+      items: 3,
+      slidesToSlide: 2
+    },
+    tablet: {
+      breakpoint: { max: 670, min: 464 },
+      items: 4,
+      slidesToSlide: 3
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 3,
+      slidesToSlide: 2
+    }
+  };
 
 
 function TvSeries() {
@@ -57,128 +93,187 @@ function TvSeries() {
         
             {/* Popular TV Series */}
 
-        <div className='md:mx-14 lg:mx-44'>
+        <div className='mx-4 md:mx-16 lg:mx-24' >
 
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Popular Tv Series</h1>
+            {data?.results?.length > 0 && (
+                 <>
+                    <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4  sm:mb-4 mb-0 text-lg tracking-wide'>Popular Tv Series</h1><Carousel
+                        responsive={responsive}
+                        showDots={false}
+                        autoPlay={true}
+                        autoPlaySpeed={3000}
+                        infinite={true}
+                        keyBoardControl={true}
+                        customTransition="all .5"
+                        transitionDuration={500}
+                        dotListClass="custom-dot-list-style"
+                        containerClass="carousel-container"
+                        itemClass="carousel-item-padding-2-px"
+                    >
 
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+                        {data?.results?.map((movie) => (
 
-            {data?.results?.map((movie) => (
+                            <div
+                                key={movie.id}
+                                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                            >
 
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-                >
+                                <NavLink to={`/movie/${movie.id}`}>
 
-                    <NavLink to={`/movie/${movie.id}`}>
+                                    <img
+                                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                                        alt={movie.name}
+                                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300' />
 
-                        <img 
-                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                            alt={movie.name} 
-                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                        />  
+                                </NavLink>
 
-                    </NavLink>
+                                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
 
-                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2> 
-                    <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>          
-                
-                </div>
-            ))}
-            
-        </div>
+                            </div>
+                        ))}
+
+                    </Carousel>
+                  </>
+            )}
 
             {/* Top Rated TV Series */}
 
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Top Rated TV Series</h1>
+            {data2?.results?.length > 0 && (
+                <>
+                     <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Top Rated TV Series</h1>
 
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+                    <Carousel
+                        responsive={responsive}
+                        showDots={false}
+                        autoPlay={true}
+                        autoPlaySpeed={3000}
+                        infinite={true}
+                        keyBoardControl={true}
+                        customTransition="all .5"
+                        transitionDuration={500}
+                        dotListClass="custom-dot-list-style"
+                        containerClass="carousel-container"
+                    >
 
-            {data2?.results?.map((movie) => (
+                    {data2?.results?.map((movie) => (
 
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-                >
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
 
-                    <NavLink to={`/movie/${movie.id}`}>
+                            <NavLink to={`/movie/${movie.id}`}>
 
-                        <img  
-                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                            alt={movie.name}
-                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                        />
+                                <img  
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                                    alt={movie.name}
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
 
-                    </NavLink>
+                            </NavLink>
 
-                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                    <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
 
-                </div>
-            ))}
+                        </div>
+                    ))}
 
-        </div>
+                    </Carousel>
+                </>
+            )}
 
             {/* Airing Today TV Series */}
 
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Airing Today</h1>
+            {data3?.results?.length > 0 && (
+                <>
+                    <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Airing Today</h1>
 
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+                    <Carousel
+                            responsive={responsive}
+                            showDots={false}
+                            autoPlay={true}
+                            autoPlaySpeed={3000}
+                            infinite={true}
+                            keyBoardControl={true}
+                            customTransition="all .5"
+                            transitionDuration={500}
+                            dotListClass="custom-dot-list-style"
+                            containerClass="carousel-container"
+                        >
 
-            {data3?.results?.map((movie) => (
+                        {data3?.results?.map((movie) => (
 
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer' 
-                >
+                            <div 
+                                key={movie.id}
+                                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer' 
+                            >
 
-                    <NavLink to={`/movie/${movie.id}`}>
+                                <NavLink to={`/movie/${movie.id}`}>
 
-                        <img  
-                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                            alt={movie.name}
-                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                        />
+                                    <img  
+                                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                        alt={movie.name}
+                                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                    />
 
-                    </NavLink>
+                                </NavLink>
 
-                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                    <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
-            
-                </div>
-            ))}
+                                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
+                        
+                            </div>
+                        ))}
 
-        </div>
+                        </Carousel>
+                </>
+            )}
 
             {/* On The Air TV Series */}
 
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>On The Air</h1>
+            {data4?.results?.length > 0 && (
+                <>
+                    <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4  sm:mb-4 mb-0 text-lg tracking-wide'>On The Air</h1>
 
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
+                    <Carousel
+                            responsive={responsive}
+                            showDots={false}
+                            autoPlay={true}
+                            autoPlaySpeed={3000}
+                            infinite={true}
+                            keyBoardControl={true}
+                            customTransition="all .5"
+                            transitionDuration={500}
+                            dotListClass="custom-dot-list-style"
+                            containerClass="carousel-container"
+                        >
 
-            {data4?.results?.map((movie) => (
+                        {data4?.results?.map((movie) => (
 
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-                >
+                            <div 
+                                key={movie.id}
+                                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                            >
 
-                    <NavLink to={`/movie/${movie.id}`}>
+                                <NavLink to={`/movie/${movie.id}`}>
 
-                        <img  
-                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                            alt={movie.name}
-                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                        />
+                                    <img  
+                                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                        alt={movie.name}
+                                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                    />
 
-                    </NavLink>
-                    
-                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                    <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
+                                </NavLink>
+                                
+                                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.first_air_date}</h3>
 
-                </div>
-            ))}
-        </div>
+                            </div>
+                        ))}
+
+                        </Carousel>
+                </>
+            )}
 
         </div>
         

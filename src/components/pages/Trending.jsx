@@ -2,9 +2,45 @@ import React from 'react'
 import SearchBarIcon from '../common/SearchBarIcon'
 import { useQuery } from '@tanstack/react-query'
 import { NavLink } from 'react-router'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 
 const apiKey = '95fbce6fd7f7a28cfc8577fc88fcac3f'
+
+const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 1530 },
+      items: 6,
+      slidesToSlide: 5
+    },
+    largeDesktop: {
+      breakpoint: { max: 1530, min: 1194 },
+      items: 5,
+      slidesToSlide: 4,
+    },
+    desktop: {
+      breakpoint: { max: 1194, min: 990 },
+      items: 4,
+      slidesToSlide: 3
+    },
+    largeTablet: {
+      breakpoint: { max:990, min: 670 },
+      items: 3,
+      slidesToSlide: 2
+    },
+    tablet: {
+      breakpoint: { max: 670, min: 464 },
+      items: 4,
+      slidesToSlide: 3
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 3,
+      slidesToSlide: 2
+    }
+  };
 
 function Trending() {
 
@@ -217,247 +253,619 @@ function Trending() {
 
         {/* Weekly Trending */}
 
-        <div className='md:mx-14 lg:mx-44'>
+        <div className='mx-4 md:mx-16 lg:mx-24'>
 
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Weekly Trending &#x1F525; </h1>
+            {data?.results?.length > 0 && (
+                <>
+                    <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Weekly Trending &#x1F525; </h1>
 
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '> 
+                    <Carousel
+                        responsive={responsive}
+                        showDots={false}
+                        autoPlay={true}
+                        autoPlaySpeed={3000}
+                        infinite={true}
+                        keyBoardControl={true}
+                        customTransition="all .5"
+                        transitionDuration={500}
+                        dotListClass="custom-dot-list-style"
+                        containerClass="carousel-container"
+                        itemClass="carousel-item-padding-2-px"
+                    >
+                        {data?.results?.map((movie) => (
 
-            {data?.results?.map((movie) => (
+                            <div 
+                                key={movie.id}
+                                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                            >
 
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-                >
+                                <NavLink to={`/movie/${movie.id}`}>
 
-                    <NavLink to={`/movie/${movie.id}`}>
+                                    <img  
+                                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                        alt={movie.name}  
+                                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                    />
 
-                        <img  
-                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                            alt={movie.name}  
-                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                        />
+                                </NavLink>
 
-                    </NavLink>
+                                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+                            
+                            </div>
+                        ))}
 
-                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
-                
-                </div>
-            ))}
+                        {data4?.results?.map((movie) => (
+                            <div 
+                                key={movie.id}
+                                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
 
-            {data4?.results?.map((movie) => (
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
+                            <NavLink to={`/movie/${movie.id}`}>
 
-                <NavLink to={`/movie/${movie.id}`}>
+                                <img  
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.name}  
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
 
-                    <img  
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.name}  
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
+                            </NavLink>
 
-                </NavLink>
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+                        
+                        </div>
+                        ))}
 
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+                        {data5?.results?.map((movie) => (
+
+                            <div 
+                                key={movie.id}
+                                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+
+                            <NavLink to={`/movie/${movie.id}`}>
+
+                                <img  
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.name}  
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+
+                            </NavLink>
+
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+                        
+                        </div>
+                        ))}
+
+                        {data6?.results?.map((movie) => (
+
+                            <div 
+                                key={movie.id}
+                                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                            >
+
+                            <NavLink to={`/movie/${movie.id}`}>
+
+                                <img  
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.name}  
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+
+                            </NavLink>
+
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+
+                            </div>
+                        ))}
+
+                        {data7?.results?.map((movie) => (
+
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+
+                        <NavLink to={`/movie/${movie.id}`}>
+
+                            <img  
+                                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                alt={movie.name}  
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                            />
+
+                        </NavLink>
+
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+
+                        </div>
+                        ))}
+
+                        {data8?.results?.map((movie) => (
+
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+
+                        <NavLink to={`/movie/${movie.id}`}>
+
+                            <img  
+                                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                alt={movie.name}  
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                            />
+
+                        </NavLink>
+
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+
+                        </div>
+                        ))}
+
+                        {data9?.results?.map((movie) => (
+
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+
+                        <NavLink to={`/movie/${movie.id}`}>
+
+                            <img  
+                                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                alt={movie.name}  
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                            />
+
+                        </NavLink>
+
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+
+                        </div>
+                        ))}
+
+                        {data10?.results?.map((movie) => (
+
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+
+                        <NavLink to={`/movie/${movie.id}`}>
+
+                            <img  
+                                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                alt={movie.name}  
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                            />
+
+                        </NavLink>
+
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+
+                        </div>
+                        ))}
+
+                        {data11?.results?.map((movie) => (
+
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+
+                        <NavLink to={`/movie/${movie.id}`}>
+
+                            <img  
+                                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                alt={movie.name}  
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                            />
+
+                        </NavLink>
+
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+
+                        </div>
+                        ))}
+
+                        {data12?.results?.map((movie) => (
+
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+
+                        <NavLink to={`/movie/${movie.id}`}>
+
+                            <img  
+                                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                alt={movie.name}  
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                            />
+
+                        </NavLink>
+
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+
+                        </div>
+                        ))}
+
+                    </Carousel>
+                </>
+            )}
+
+            {/* Trending Movies */}
+
+            {data1?.results?.length > 0 && (
+                <>
+                    <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4  sm:mb-4 mb-0 text-lg tracking-wide'>Trending Movies</h1>
             
-            </div>
-            ))}
-
-            {data5?.results?.map((movie) => (
-
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                    <img  
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.name}  
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
+                    <Carousel
+                        responsive={responsive}
+                        showDots={false}
+                        autoPlay={true}
+                        autoPlaySpeed={3000}
+                        infinite={true}
+                        keyBoardControl={true}
+                        customTransition="all .5"
+                        transitionDuration={500}
+                        dotListClass="custom-dot-list-style"
+                        containerClass="carousel-container"
+                        itemClass="carousel-item-padding-2-px"
+                    >
+                        {data1?.results?.map((movie) => (
             
-            </div>
-            ))}
-
-            {data6?.results?.map((movie) => (
-
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-                >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                    <img  
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.name}  
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
-
-                </div>
-            ))}
-
-            {data7?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-            <NavLink to={`/movie/${movie.id}`}>
-
-                <img  
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.name}  
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-            </NavLink>
-
-            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
-
-            </div>
-            ))}
-
-            {data8?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-            <NavLink to={`/movie/${movie.id}`}>
-
-                <img  
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.name}  
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-            </NavLink>
-
-            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
-
-            </div>
-            ))}
-
-            {data9?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-            <NavLink to={`/movie/${movie.id}`}>
-
-                <img  
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.name}  
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-            </NavLink>
-
-            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
-
-            </div>
-            ))}
-
-            {data10?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-            <NavLink to={`/movie/${movie.id}`}>
-
-                <img  
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.name}  
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-            </NavLink>
-
-            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
-
-            </div>
-            ))}
-
-            {data11?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-            <NavLink to={`/movie/${movie.id}`}>
-
-                <img  
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.name}  
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-            </NavLink>
-
-            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
-
-            </div>
-            ))}
-
-            {data12?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-            <NavLink to={`/movie/${movie.id}`}>
-
-                <img  
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.name}  
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-            </NavLink>
-
-            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name || movie.title}</h2>
-
-            </div>
-            ))}
-
+                            <div 
+                                key={movie.id}
+                                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                            >
             
+                                <NavLink to={`/movie/${movie.id}`}>
+            
+                                    <img 
+                                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                        alt={movie.title} 
+                                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                    />
+            
+                                </NavLink>
+            
+                                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                            </div>
+                        ))}
+            
+                        {data13?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data14?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data15?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data16?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data17?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data18?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data19?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data20?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data21?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data22?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data23?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                        {data24?.results?.map((movie) => (
+            
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                        >
+            
+                            <NavLink to={`/movie/${movie.id}`}>
+            
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                    alt={movie.title} 
+                                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                                />
+            
+                            </NavLink>
+            
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
+                            <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+            
+                        </div>
+                        ))}
+            
+                    </Carousel>
+                </>
+            )}
 
-        </div>
+        {/* Trending TV Shows */}
 
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Trending Movies</h1>
+        {data2?.results?.length > 0 && (
+            <>
+                <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Trending TV Shows</h1>
 
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
-
-            {data1?.results?.map((movie) => (
-
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                <Carousel
+                    responsive={responsive}
+                    showDots={false}
+                    autoPlay={true}
+                    autoPlaySpeed={3000}
+                    infinite={true}
+                    keyBoardControl={true}
+                    customTransition="all .5"
+                    transitionDuration={500}
+                    dotListClass="custom-dot-list-style"
+                    containerClass="carousel-container"
+                    itemClass="carousel-item-padding-2-px"
                 >
+                    {data2?.results?.map((movie) => (
 
-                    <NavLink to={`/movie/${movie.id}`}>
+                        <div 
+                            key={movie.id}
+                            className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
+                        >
+
+                            <NavLink to={`/movie/${movie.id}`}>
+
+                            <img 
+                                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                                alt={movie.title} 
+                                className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                            />
+
+                            </NavLink>
+
+                            <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                            
+                        </div>
+                    ))}
+
+                    {data25?.results?.map((movie) => (
+
+                    <div 
+                        key={movie.id}
+                        className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
+                    >
+
+                        <NavLink to={`/movie/${movie.id}`}>
 
                         <img 
                             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
@@ -465,479 +873,174 @@ function Trending() {
                             className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
                         />
 
-                    </NavLink>
+                        </NavLink>
 
-                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                    <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                        
+                    </div>
+                    ))}
 
-                </div>
-            ))}
+                    {data26?.results?.map((movie) => (
 
-            {data13?.results?.map((movie) => (
+                    <div 
+                        key={movie.id}
+                        className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
+                    >
 
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
+                        <NavLink to={`/movie/${movie.id}`}>
 
-                <NavLink to={`/movie/${movie.id}`}>
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                        />
 
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
+                        </NavLink>
 
-                </NavLink>
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                        
+                    </div>
+                    ))}
 
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+                    {data27?.results?.map((movie) => (
 
-            </div>
-            ))}
+                    <div 
+                        key={movie.id}
+                        className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
+                    >
 
-            {data14?.results?.map((movie) => (
+                        <NavLink to={`/movie/${movie.id}`}>
 
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                        />
 
-                <NavLink to={`/movie/${movie.id}`}>
+                        </NavLink>
 
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                        
+                    </div>
+                    ))}
 
-                </NavLink>
+                    {data28?.results?.map((movie) => (
 
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+                    <div 
+                        key={movie.id}
+                        className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
+                    >
 
-            </div>
-            ))}
+                        <NavLink to={`/movie/${movie.id}`}>
 
-            {data15?.results?.map((movie) => (
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                        />
 
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
+                        </NavLink>
 
-                <NavLink to={`/movie/${movie.id}`}>
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                        
+                    </div>
+                    ))}
 
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
+                    {data29?.results?.map((movie) => (
 
-                </NavLink>
+                    <div 
+                        key={movie.id}
+                        className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
+                    >
 
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+                        <NavLink to={`/movie/${movie.id}`}>
 
-            </div>
-            ))}
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                        />
 
-            {data16?.results?.map((movie) => (
+                        </NavLink>
 
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                        
+                    </div>
+                    ))}
 
-                <NavLink to={`/movie/${movie.id}`}>
+                    {data30?.results?.map((movie) => (
 
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
+                    <div 
+                        key={movie.id}
+                        className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
+                    >
 
-                </NavLink>
+                        <NavLink to={`/movie/${movie.id}`}>
 
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                            alt={movie.title} 
+                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                        />
 
-            </div>
-            ))}
+                        </NavLink>
 
-            {data17?.results?.map((movie) => (
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                        
+                    </div>
+                    ))}
 
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
+                    </Carousel>
+            </>
+        )}
 
-                <NavLink to={`/movie/${movie.id}`}>
+            {/* Trending People */}
 
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
-
-            </div>
-            ))}
-
-            {data18?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
-
-            </div>
-            ))}
-
-            {data19?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
-
-            </div>
-            ))}
-
-            {data20?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
-
-            </div>
-            ))}
-
-            {data21?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
-
-            </div>
-            ))}
-
-            {data22?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
-
-            </div>
-            ))}
-
-            {data23?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
-
-            </div>
-            ))}
-
-            {data24?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.title}</h2>
-                <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.release_date}</h3>
-
-            </div>
-            ))}
-
-        </div>
-
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Trending TV Shows</h1>
-
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
-
-            {data2?.results?.map((movie) => (
-
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
-                >
-
-                    <NavLink to={`/movie/${movie.id}`}>
-
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                        alt={movie.title} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                    </NavLink>
-
-                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                    
-                </div>
-            ))}
-
-            {data25?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                <img 
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.title} 
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                
-            </div>
-            ))}
-
-            {data26?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                <img 
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.title} 
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                
-            </div>
-            ))}
-
-            {data27?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                <img 
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.title} 
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                
-            </div>
-            ))}
-
-            {data28?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                <img 
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.title} 
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                
-            </div>
-            ))}
-
-            {data29?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                <img 
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.title} 
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                
-            </div>
-            ))}
-
-            {data30?.results?.map((movie) => (
-
-            <div 
-                key={movie.id}
-                className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'  
-            >
-
-                <NavLink to={`/movie/${movie.id}`}>
-
-                <img 
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
-                    alt={movie.title} 
-                    className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                />
-
-                </NavLink>
-
-                <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                
-            </div>
-            ))}
-
-        </div>
-
-        <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 mx-2 sm:ml-16 sm:mb-4 mb-0 text-lg tracking-wide'>Trending People</h1>
-
-        <div className='flex gap-4 sm:gap-8 mx-2 items-center sm:mx-16 overflow-y-hidden px-4 pb-4 pt-0 mt-2 overflow-x-scroll w-full sm:w-auto '>
-
-            {data3?.results?.map((movie) => (
-                
-                <div 
-                    key={movie.id}
-                    className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
-                >
-
-                    <NavLink to={`/movie/${movie.id}`}>
-
-                    <img 
-                        src={`https://image.tmdb.org/t/p/w500/${movie.profile_path}`} 
-                        alt={movie.name} 
-                        className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
-                    />
-
-                    </NavLink>
-
-                    <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
-                    <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.known_for_department}</h3>
+            {data3?.results?.length > 0 && (
+                <>
+                     <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide'>Trending People</h1>
             
-                </div>
-            ))}
-        </div>
+            <Carousel
+                responsive={responsive}
+                showDots={false}
+                autoPlay={true}
+                autoPlaySpeed={3000}
+                infinite={true}
+                keyBoardControl={true}
+                customTransition="all .5"
+                transitionDuration={500}
+                dotListClass="custom-dot-list-style"
+                containerClass="carousel-container"
+                itemClass="carousel-item-padding-2-px"
+            >
+                {data3?.results?.map((movie) => (
+                    
+                    <div 
+                        key={movie.id}
+                        className='sm:w-[200px]  w-[100px] flex flex-col items-center pb-8 flex-shrink-0  hover:scale-110 cursor-pointer'
+                    >
+    
+                        <NavLink to={`/movie/${movie.id}`}>
+    
+                        <img 
+                            src={`https://image.tmdb.org/t/p/w500/${movie.profile_path}`} 
+                            alt={movie.name} 
+                            className='sm:w-[200px]  w-[100px] rounded-md shadow-md shadow-zinc-300'
+                        />
+    
+                        </NavLink>
+    
+                        <h2 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] leading-[24px] mt-2 ml-2 text-center h-10 '>{movie.name}</h2>
+                        <h3 className='text-[#F5F5F5] text-sm font-normal sm:text-[16px] font-sans tracking-[-0.41px] hidden sm:block leading-[24px] mt-0 m-2'>{movie.known_for_department}</h3>
+                
+                    </div>
+                ))}
+    
+                </Carousel>
+                </>
+            )}
+
+       
 
         </div>
         
