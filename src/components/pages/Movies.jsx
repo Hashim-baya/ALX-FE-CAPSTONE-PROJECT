@@ -239,7 +239,7 @@ function Movies() {
 
         {/* Action Movies */}
 
-        <div className='md:mx-14 lg:mx-44'>
+        <div className='mx-4 md:mx-16 lg:mx-24'>
         <h1 className='text-[#F5F5F5] font-bold inline-block sm:text-[24px] font-sans sm:tracking-[-0.41px] leading-[30px]  sm:mt-4 sm:mb-4 mb-0 text-lg tracking-wide '>Action</h1>
 
         <Carousel
